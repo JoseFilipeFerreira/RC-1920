@@ -103,15 +103,19 @@ de\textit{dowlink} de 300 Mbit/s e velocidade máxima de
 \textit{uplink} de 75 Mbits/s.
 As bandas de frequência ocupadas pelo 4G, nomeadamente a norma 
 LTE2500,  estão compreendidas entre os 2500MHz e os 2690 MHz 
-\cite{XinLi18}.
-
-\subsection{A barreira do 4G}
-Apenas dispositivos multi-banda conseguem ligar-se a redes móveis por
-todo o mundo. Tal deve-se ao facto de que cada país utiliza uma banda
-diferente.
+\cite{XinLi18}.\\
+Visto que a norma do 4G apenas especifica um intervalo que as frequências
+devem ocupar, cada país escolheu uma ou mais frequências para serem
+utilizadas.
+Infelizmente, a primeira geração de antenas não tinha a capacidade de
+funcionar em todas as bandas. Assim, os dispositivos estavam inicialmente
+limitados geograficamente. Como solução para este problema forma
+desenvolvidas antenas multi-banda que se conseguem ligar a redes móveis
+por todo o mundo. Eventualmente estas antenas foram miniaturizado e
+integradas em dispositivos móveis \cite{XinLi18}.
 
 \section{Passagem do 4G para o 5G}
-A passagem do 4G para o 5G é expectavel que leve pelo menos uma
+A passagem do 4G para o 5G é expectável que leve pelo menos uma
 década, embora pareça uma realidade próxima, com todos os 
 equipamentos que vão sendo divulgados que já possuem a capacidade
 de suportar esta norma. Aos poucos, já estão a ser preparadas
@@ -128,10 +132,27 @@ energética.\\
 Para proporcionar uma melhor experiência de utilização, vai ser
 introduzido um novo conceito de personalização do serviço
 conforme as necessidades do utilizador, podendo dar prioridade,
-por exemplo, à latencia e fiabilidade ou velocidade da conexão.
+por exemplo, à latencia e fiabilidade ou velocidade da conexão.\\
 
-\subsection{Problemas resolvidos}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=12cm]{images/5Gpyramid.jpg}
+  \caption{Piramide de Utilização dos 5G}
+  \label{fig:pyramid}
+\end{figure}
+
+O 5G irá operar em frequências à volta dos 60GHz, de forma
+a ser possível transmitir na ordem dos gigabits por segundo,
+ao contrário do 3G/4G que opera em frequências muito mais baixas, 
+por volta 6GHz.
+
 \subsection{Desvantagens inerentes}
+Como desvantagem na implementação do 5G, vemos que os sistemas que
+utilizam esta tecnologia tem que saber o contexto onde se encontram,
+como autonomia do dispositivo, carga de CPU, informações sobre o 
+utilizador, como a sua localização, o que são informações sensiveis
+que não é ideal serem conhecidas pelas aplicações.\cite{Boyd12}
+
 \subsection{Utilização}
 Uma tecnologia recheada de vantagens como esta não podia ser desperdiçada
 só em certas áreas da industria, em função disso, está a ser aproveitada
