@@ -180,8 +180,8 @@ exceed enviados ao seu host? Porquê?}\\
 O valor do campo TTL é 62.\\
 Para todas as mensagens de resposta \textit{ICMP TTL exceeded} recebidas no
 nosso host esse valor manteve-se constante.\\
-Apesar do TTL observado (pré-definido pelo destino), quando o pacote chega ao
-destino o TTL é de 61. Tal deve-se ao facto do pacote em questão ter passado por
+Apesar do TTL observado (pré-definido pelo destino) ser 64, quando o pacote chega ao
+destino o TTL é de 62. Tal deve-se ao facto do pacote em questão ter passado por
 2 routers antes de chegar e, por isso, ter sido decrementado 2 vezes.
 
 \begin{figure}[H]
@@ -222,8 +222,9 @@ valor 1, isso indica que o diagrama foi fragmentado, existindo então mais
 fragmentos.\\
 Seguidamente, podemos ver que o \textit{Fragment offset} é 0, provando de que se
 trata do primeiro fragmento.\\
-A \textit{Total Length} é igual a 1500 bytes
+A \textit{Total Length} é igual a 1500 bytes.
 
+\pagebreak
 \subsection{Alínea c}
 \textbf{Imprima o segundo fragmento do datagrama IP original. Que informação do
 cabeçalho IP indica que não se trata do 1º fragmento? Há mais fragmentos? O que
