@@ -299,6 +299,13 @@ os laptops dos vários departamentos e o servidor do departamento A
 \subsection{Alínea e}
 \textbf{Verifique se existe conectividade IP do router de acesso Rext para o servidor S1.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/RextPing.png}
+    \caption{Ex.2 - Conectividade Router Rext - S1}
+    \label{fig:RextPing}
+\end{figure}
+
 \section{Exercício 2}
 
 \subsection{Alínea a}
@@ -346,15 +353,50 @@ servidor S1 localizado no departamento A. Use o comando route delete para o
 efeito. Que implicação tem esta medida para os utilizadores da empresa que 
 acedem ao servidor? Justifique.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/routeDelete.png}
+    \caption{Ex.2 - Remoção da rota default}
+    \label{fig:routeDelete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/pingRextS1.png}
+    \caption{Ex.2 - Ping do Rext para S1}
+    \label{fig:pingRextS1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/pingS1Rext.png}
+    \caption{Ex.2 - Ping do S1 para Rext}
+    \label{fig:pingS1Rext}
+\end{figure}
+
 \subsection{Alínea d}
 \textbf{Adicione as rotas estáticas necessárias para restaurar a conectividade
 para o servidor S1 por forma a contornar a restrição imposta na alínea c). Utilize
 para o efeito o comando route add e registe os comandos que usou.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/routeAdd.png}
+    \caption{Ex.2 - Restauração da conectividade adicionando rotas estáticas}
+    \label{fig:routeAdd}
+\end{figure}
+
 \subsection{Alínea e}
 \textbf{Teste a nova política de encaminhamento garantindo que o servidor está novamente
 acessível utilizando para o efeito o comando ping. Registe a nova tabela de
 encaminhamento do servidor.}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/conectividadeDep.png}
+    \caption{Ex.2 - Conectividade entre os departamentos e S1}
+    \label{fig:conectividadeDep}
+\end{figure}
 
 \section{Exercício 3}
 
