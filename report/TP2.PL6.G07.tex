@@ -3,7 +3,7 @@
 \usepackage[portuguese]{babel}
 \usepackage{hyperref}
 \usepackage{a4wide}
-\hypersetup{pdftitle={TP2:  Protocolo IPv4  (Parte I)},
+\hypersetup{pdftitle={TP2:  Protocolo IP  (Parte I e II)},
 pdfauthor={João Teixeira, José Ferreira, Miguel Solino},
 colorlinks=true,
 urlcolor=blue,
@@ -267,9 +267,9 @@ próprio.
 \section{Exercício 1}
 
 \subsection{Alínea a}
-\textbf{Indique que endereços IP e máscaras de rede foram atribuídos pelo CORE a cada
-equipamento. Para simplificar, pode incluir uma imagem que ilustre de forma clara a
-topologia definida e o endereçamento usado.}
+\textbf{Indique que endereços IP e máscaras de rede foram atribuídos pelo CORE a
+cada equipamento. Para simplificar, pode incluir uma imagem que ilustre de forma
+clara a topologia definida e o endereçamento usado.}
 
 \begin{figure}[H]
     \centering 
@@ -277,20 +277,21 @@ topologia definida e o endereçamento usado.}
     \caption{Topologia Core}
     \label{fig:topologiaCore}
 \end{figure}
-Na figura \ref{fig:topologiaCore}, é possível verificar os endereços atribuídos a cada 
-equipamento. 
+Na figura \ref{fig:topologiaCore}, é possível verificar os endereços atribuídos
+a cada equipamento. 
 
 \subsection{Alínea b}
 \textbf{Trata-se de endereços públicos ou privados? Porquê?}\\
-Uma vez que todos os endereços utilizam um dos blocos reservados a endereços privados:
-"10.0.0.0 - 10.255.255.255 / 8", concluimos que se tratam de endereços privados.
+Uma vez que todos os endereços utilizam um dos blocos reservados a endereços
+privados: "10.0.0.0 - 10.255.255.255 / 8", concluimos que se tratam de endereços
+privados.
 
 \subsection{Alínea c}
 \textbf{Por que razão não é atribuído um endereço IP aos switches?}\\
 Não é necessário a atribuição de endereços IP aos switches porque são 
 intervenientes na camade de ligação 2 e por sua vez transparentes à camada de
-ligação 3. Estes encaminham os pacotes apenas tendo em atenção os endereços MAC dos
-equipamentos.\\
+ligação 3. Estes encaminham os pacotes apenas tendo em atenção os endereços MAC
+dos equipamentos.\\
 
 \subsection{Alínea d}
 \textbf{Usando o comando ping certifique-se que existe conectividade IP entre 
@@ -304,12 +305,13 @@ os laptops dos vários departamentos e o servidor do departamento A
     \label{fig:pingEx1P2}
 \end{figure}
 Como podemos observar pela figura \ref{fig:pingEx1P2}, para verificar se existia
-conectividade foi utilizado o comando ping em pelo menos um laptop de cada departamento.
-Sendo que todos obtiveram resposta do servidor após terem enviado pacotes, concluímos
-que existe conectividade em todos os departamentos.
+conectividade foi utilizado o comando ping em pelo menos um laptop de cada
+departamento. Sendo que todos obtiveram resposta do servidor após terem enviado
+pacotes, concluímos que existe conectividade em todos os departamentos.
 
 \subsection{Alínea e}
-\textbf{Verifique se existe conectividade IP do router de acesso Rext para o servidor S1.}\\
+\textbf{Verifique se existe conectividade IP do router de acesso Rext para o
+servidor S1.}\\
 
 \begin{figure}[H]
     \centering 
@@ -317,16 +319,17 @@ que existe conectividade em todos os departamentos.
     \caption{Ex.2 - Conectividade S1 - Router Rext}
     \label{fig:RextPing}
 \end{figure}
-Observando a figura \ref{fig:RextPing} e seguindo o racíocinio da alinea anterior,
-verificamos que existe conectividade do router Rext para o servidor S1.
+Observando a figura \ref{fig:RextPing} e seguindo o racíocinio da alinea
+anterior, verificamos que existe conectividade do router Rext para o servidor
+S1.
 
 \section{Exercício 2}
 
 \subsection{Alínea a}
 \textbf{Execute o comando netstat –rn por forma a poder consultar a tabela de
-encaminhamento unicast (IPv4). Inclua no seu relatório as tabelas de encaminhamento
-obtidas; interprete as várias entradas de cada tabela. Se necessário, consulte o manual
-respetivo (man netstat).}
+encaminhamento unicast (IPv4). Inclua no seu relatório as tabelas de
+encaminhamento obtidas; interprete as várias entradas de cada tabela. Se
+necessário, consulte o manual respetivo (man netstat).}
 
 \begin{figure}[H]
     \centering 
@@ -341,11 +344,13 @@ respetivo (man netstat).}
     \caption{Ex.2 - netstat Router departamento B}
     \label{fig:netstatRouterEx2P2}
 \end{figure}
-Na figura \ref{fig:netstatPcEx2P2} está representada a tabela de encaminhamento de onde
-podemos retirar informações relativa à rota que irá ser feita pelo pacote.
-Na coluna "Destination" é nos indicado a sub-rede destino, na "Gateway" a informação do
-equipamento pelo qual irá passar o pacote e na "Genmask" o tipo da máscara.\\
+Na figura \ref{fig:netstatPcEx2P2} está representada a tabela de encaminhamento
+de onde podemos retirar informações relativa à rota que irá ser feita pelo
+pacote. Na coluna "Destination" é nos indicado a sub-rede destino, na "Gateway"
+a informação do equipamento pelo qual irá passar o pacote e na "Genmask" o tipo
+da máscara.\\
 Analisando a primeira e a segunda entrada da figura \ref{fig:netstatPcEx2P2} 
+<<<<<<< HEAD
 reparamos que as duas diferem no Gateway. Sendo que os dois endereços estão ligados
 diretamente entre si, o Gateway não precisa de ser definido. Caso contrário, seria
 necessário para se saber o próximo salto.\\
@@ -356,10 +361,19 @@ significa que o destino 0.0.0.0 indentifica todas as redes possíveis.\\
 Sendo que a primeira tabela e a segunda tabela são idênticas, não é necessário fazer
 uma análise de todas as entradas da segunda.
 
+=======
+reparamos que as duas diferem no Gateway. Sendo que os dois endereços estão
+ligados diretamente entre si, o Gateway não precisa de ser definido. Caso
+contrário, seria necessário para se saber o próximo salto.\\
+Relativamente à coluna Flags, estas apenas servem para acrescentar informações
+adicionais. A flag "UG" é utilizada quando o gateway está definido e a "U" caso
+contrário. Sendo que a primeira tabela e a segunda tabela são idênticas, não é
+necessário fazer uma análise de todas as entradas da segunda.
+>>>>>>> 3c7872edbc070c9da5e666ddb0d33c1d70118dbe
 
 \subsection{Alínea b}
-\textbf{Diga, justificando, se está a ser usado encaminhamento estático ou dinâmico
-(sugestão: analise que processos estão a correr em cada sistema).}
+\textbf{Diga, justificando, se está a ser usado encaminhamento estático ou
+dinâmico (sugestão: analise que processos estão a correr em cada sistema).}
 
 \begin{figure}[H]
     \centering 
@@ -381,10 +395,10 @@ após analisar a figura \ref{fig:htopca1} verificamos que não é usado esse pro
 conluindo então que se trata de um encaminhamento estático.
 
 \subsection{Alínea c}
-\textbf{Admita que, por questões administrativas, a rota por defeito (0.0.0.0 ou 
-default) deve ser retirada definitivamente da tabela de encaminhamento do 
-servidor S1 localizado no departamento A. Use o comando route delete para o 
-efeito. Que implicação tem esta medida para os utilizadores da empresa que 
+\textbf{Admita que, por questões administrativas, a rota por defeito (0.0.0.0 ou
+default) deve ser retirada definitivamente da tabela de encaminhamento do
+servidor S1 localizado no departamento A. Use o comando route delete para o
+efeito. Que implicação tem esta medida para os utilizadores da empresa que
 acedem ao servidor? Justifique.}
 
 \begin{figure}[H]
@@ -418,8 +432,8 @@ pacotes para o router.
 
 \subsection{Alínea d}
 \textbf{Adicione as rotas estáticas necessárias para restaurar a conectividade
-para o servidor S1 por forma a contornar a restrição imposta na alínea c). Utilize
-para o efeito o comando route add e registe os comandos que usou.}
+para o servidor S1 por forma a contornar a restrição imposta na alínea c).
+Utilize para o efeito o comando route add e registe os comandos que usou.}
 
 \begin{figure}[H]
     \centering 
@@ -429,9 +443,9 @@ para o efeito o comando route add e registe os comandos que usou.}
 \end{figure}
 
 \subsection{Alínea e}
-\textbf{Teste a nova política de encaminhamento garantindo que o servidor está novamente
-acessível utilizando para o efeito o comando ping. Registe a nova tabela de
-encaminhamento do servidor.}
+\textbf{Teste a nova política de encaminhamento garantindo que o servidor está
+novamente acessível utilizando para o efeito o comando ping. Registe a nova
+tabela de encaminhamento do servidor.}
 
 \begin{figure}[H]
     \centering 
@@ -461,21 +475,24 @@ existe conectividade entre o servidor S1 e os laptops de todos os departamentos.
     \label{fig:topCoreEx3}
 \end{figure}
 
-\textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em que “yy”
-são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o dígito 
-correspondente ao seu turno prático (PLx). Defina um novo esquema de endereçamento para 
-as redes dos departamentos (mantendo a rede de acesso e core inalteradas) e atribua 
-endereços às interfaces dos vários sistemas envolvidos. Deve justificar as opções usadas.}
+\textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em
+que “yy” são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o
+dígito correspondente ao seu turno prático (PLx). Defina um novo esquema de
+endereçamento para as redes dos departamentos (mantendo a rede de acesso e core
+inalteradas) e atribua endereços às interfaces dos vários sistemas envolvidos.
+Deve justificar as opções usadas.}
 
 \subsection{Alínea 2}
-\textbf{Qual a máscara de rede que usou (em notação decimal)? Quantos interfaces IP pode 
-interligar em cada departamento? Justifique.}
+\textbf{Qual a máscara de rede que usou (em notação decimal)? Quantos interfaces
+IP pode interligar em cada departamento? Justifique.}
 
 \subsection{Alínea 3}
-\textbf{Garanta e verifique que a conectividade IP entre as várias redes locais da 
-organização MIEI-RC é mantida. Explique como procedeu.}
+\textbf{Garanta e verifique que a conectividade IP entre as várias redes locais
+da organização MIEI-RC é mantida. Explique como procedeu.}
 
 \chapter{Conclusão}
-
+Com este trabalho consideramos que conseguimos atingir com sucesso todos os
+desafios apresentados no enunciado obtendo assim um conhecimento mais avançado
+sobre o protocolo IPv4 e \textit{sub-netting}.
 
 \end{document}
