@@ -350,7 +350,9 @@ reparamos que as duas diferem no Gateway. Sendo que os dois endereços estão li
 diretamente entre si, o Gateway não precisa de ser definido. Caso contrário, seria
 necessário para se saber o próximo salto.\\
 Relativamente à coluna Flags, estas apenas servem para acrescentar informações adicionais.
-A flag "UG" é utilizada quando o gateway está definido e a "U" caso contrário.
+A flag "UG" é utilizada quando o gateway está definido e a "U" caso contrário.\\
+Olhando agora apenas para a primeira entrada, reparamos que a máscara é 0 o que 
+significa que o destino 0.0.0.0 indentifica todas as redes possíveis.\\
 Sendo que a primeira tabela e a segunda tabela são idênticas, não é necessário fazer
 uma análise de todas as entradas da segunda.
 
@@ -372,6 +374,11 @@ uma análise de todas as entradas da segunda.
     \caption{Ex.2 - Processos a serem executados em Ca1}
     \label{fig:htopca1}
 \end{figure}
+Se apenas analisassemos a figura \ref{fig:htop2a} reparavamos que é usado pelo router
+o protocolo ospfd (este permite que o pacote siga diferentes caminhos quando um não é
+possível) e assim concluiamos que se trata de um encaminhamento dinâmico. No entanto,
+após analisar a figura \ref{fig:htopca1} verificamos que não é usado esse protocolo,
+conluindo então que se trata de um encaminhamento estático.
 
 \subsection{Alínea c}
 \textbf{Admita que, por questões administrativas, a rota por defeito (0.0.0.0 ou 
@@ -400,6 +407,14 @@ acedem ao servidor? Justifique.}
     \caption{Ex.2 - Ping do S1 para Rext}
     \label{fig:pingS1Rext}
 \end{figure}
+
+Removendo a rota por defeito é perdida a conectividade entre o servidor S1 e os 
+restantes hosts existentes fora do departamento onde se encontra. Isto acontece porque o 
+servidor S1 não tendo definida a rota de envio de tráfego para redes não locais faz com 
+que não saiba para onde enviar de volta o que recebeu dos utilizadores. Tal verifica-se
+nas figuras \ref{fig:pingRextS1} e \ref{fig:pingS1Rext} em que o router consegue enviar
+para o servidor pacotes mas não os recebe de volta e o servidor não consegue enviar
+pacotes para o router.
 
 \subsection{Alínea d}
 \textbf{Adicione as rotas estáticas necessárias para restaurar a conectividade
@@ -431,6 +446,9 @@ encaminhamento do servidor.}
     \caption{Ex.2 - Tabela de encaminhamento}
     \label{fig:tabS1}
 \end{figure}
+
+Analisando as figuras \ref{fig:conectividadeDep} e \ref{tabS1} podemos verificar que
+existe conectividade entre o servidor S1 e os laptops de todos os departamentos.
 
 \section{Exercício 3}
 
