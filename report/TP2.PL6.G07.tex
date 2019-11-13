@@ -271,6 +271,22 @@ se, além deste, existem mais fragmentos do datagrama original.
 
 \section{Exercício 1}
 
+\subsection{Alínea a}
+\textbf{Indique que endereços IP e máscaras de rede foram atribuídos pelo CORE a cada
+equipamento. Para simplificar, pode incluir uma imagem que ilustre de forma clara a
+topologia definida e o endereçamento usado.}
+
+\subsection{Alínea b}
+\textbf{Trata-se de endereços públicos ou privados? Porquê?}
+
+\subsection{Alínea c}
+\textbf{Por que razão não é atribuído um endereço IP aos switches?}
+
+\subsection{Alínea d}
+\textbf{Usando o comando ping certifique-se que existe conectividade IP entre 
+os laptops dos vários departamentos e o servidor do departamento A 
+(basta certificar-se da conectividade de um laptop por departamento).}
+
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\textwidth]{images/pingEx1P2.png}
@@ -278,7 +294,16 @@ se, além deste, existem mais fragmentos do datagrama original.
     \label{fig:pingEx1P2}
 \end{figure}
 
+\subsection{Alínea e}
+\textbf{Verifique se existe conectividade IP do router de acesso Rext para o servidor S1.}
+
 \section{Exercício 2}
+
+\subsection{Alínea a}
+\textbf{Execute o comando netstat –rn por forma a poder consultar a tabela de
+encaminhamento unicast (IPv4). Inclua no seu relatório as tabelas de encaminhamento
+obtidas; interprete as várias entradas de cada tabela. Se necessário, consulte o manual
+respetivo (man netstat).}
 
 \begin{figure}[H]
     \centering 
@@ -294,6 +319,10 @@ se, além deste, existem mais fragmentos do datagrama original.
     \label{fig:netstatRouterEx2P2}
 \end{figure}
 
+\subsection{Alínea b}
+\textbf{Diga, justificando, se está a ser usado encaminhamento estático ou dinâmico
+(sugestão: analise que processos estão a correr em cada sistema).}
+
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\textwidth]{images/htop2a.png}
@@ -308,7 +337,39 @@ se, além deste, existem mais fragmentos do datagrama original.
     \label{fig:htopca1}
 \end{figure}
 
+\subsection{Alínea c}
+\textbf{Admita que, por questões administrativas, a rota por defeito (0.0.0.0 ou 
+default) deve ser retirada definitivamente da tabela de encaminhamento do 
+servidor S1 localizado no departamento A. Use o comando route delete para o 
+efeito. Que implicação tem esta medida para os utilizadores da empresa que 
+acedem ao servidor? Justifique.}
+
+\subsection{Alínea d}
+\textbf{Adicione as rotas estáticas necessárias para restaurar a conectividade
+para o servidor S1 por forma a contornar a restrição imposta na alínea c). Utilize
+para o efeito o comando route add e registe os comandos que usou.}
+
+\subsection{Alínea e}
+\textbf{Teste a nova política de encaminhamento garantindo que o servidor está novamente
+acessível utilizando para o efeito o comando ping. Registe a nova tabela de
+encaminhamento do servidor.}
+
 \section{Exercício 3}
+
+\subsection{Alínea 1}
+\textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em que “yy”
+são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o dígito 
+correspondente ao seu turno prático (PLx). Defina um novo esquema de endereçamento para 
+as redes dos departamentos (mantendo a rede de acesso e core inalteradas) e atribua 
+endereços às interfaces dos vários sistemas envolvidos. Deve justificar as opções usadas.}
+
+\subsection{Alínea 2}
+\textbf{Qual a máscara de rede que usou (em notação decimal)? Quantos interfaces IP pode 
+interligar em cada departamento? Justifique.}
+
+\subsection{Alínea 3}
+\textbf{Garanta e verifique que a conectividade IP entre as várias redes locais da 
+organização MIEI-RC é mantida. Explique como procedeu.}
 
 \chapter{Conclusão}
 
