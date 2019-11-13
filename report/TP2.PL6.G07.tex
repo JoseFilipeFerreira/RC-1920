@@ -59,8 +59,7 @@ linkcolor=black}
 
 \subsection{Alínea a}
 \textbf{Active o wireshark ou o tcpdump no pc s1. Numa shell de s1, execute o
-comando
-traceroute -l para o endereço IP do host h5.}
+comando traceroute -l para o endereço IP do host h5.}
 
 \begin{figure}[H]
     \centering 
@@ -78,9 +77,8 @@ de 4.\\
 Na primeira fase, os pacotes com TTL = 1, TTL = 2 e TTL = 3 foram descartados
 pelos routers r1, r2 e r3, respetivamente. Para cada um destes foi recebido um
 pacote \textit{Time-to-live exceeded}.\\
-Na segunda fase, ao contrário dos pacotes anteriores,
-nenhum deles foi descartado tendo como resposta pacotes \textit{Echo (ping)
-reply}.
+Na segunda fase, ao contrário dos pacotes anteriores, nenhum deles foi
+descartado tendo como resposta pacotes \textit{Echo (ping) reply}.
 
 \begin{figure}[H]
     \centering 
@@ -91,7 +89,7 @@ reply}.
 \subsection{Alínea c}
 \textbf{Qual deve ser o valor inicial mínimo do campo TTL para alcançar o
 destino h5? Verifique na prática que a sua resposta está correta.}\\
-Face aos resultados analisados na questão anterior verifica-se que a partir de
+Face aos resultados analisados na questão anterior, verifica-se que a partir de
 TTL = 4 os pacotes deixam de receber mensagem de erro como resposta, logo o
 valor inicial mínimo para alcançar o destino h5 deverá ser 4.
 
@@ -119,7 +117,6 @@ RTT = ((0.075 + 0.013 + 0.010) / 3 + (0.022 + 0.012 + 0.012) / 3 + (0.025 +
     \caption{Ex. 2 - Cabeçalho IP}
     \label{fig:ipEx2}
 \end{figure}
-
 192.168.100.208
 
 \subsection{Alínea b}
@@ -161,7 +158,8 @@ do endereço IP atribuído à interface da sua máquina. Para a sequência
 de mensagens ICMP enviadas pelo seu computador, indique que campos do 
 cabeçalho IP variam de pacote para pacote.}\\
 Após ordenarmos, concluímos que os campos do cabeçalho IP que variam de 
-pacote para pacote são o TTL, Header Checksum e o identificador.
+pacote para pacote são o \textit{TTL}, \textit{Header Checksum} e o
+identificador.
 
 \begin{figure}[H]
     \centering 
@@ -172,9 +170,8 @@ pacote para pacote são o TTL, Header Checksum e o identificador.
 \subsection{Alínea f}
 \textbf{Observa algum padrão nos valores do campo de Identificação do datagrama
 IP e TTL?}\\
-Ao analisar o datagrama IP, verificamos que este conserva os primeiros 8 bits
-em todos o casos apresentados e os restantes são incrementados
-sequencialmente.\\
+Ao analisar o datagrama IP, verificamos que este conserva os primeiros 8 bits em
+todos o casos apresentados e os restantes são incrementados sequencialmente.\\
 Também observamos que o TTL é incrementado sequencialmente
 
 \subsection{Alínea g}
@@ -240,11 +237,10 @@ Há mais fragmentos? O que nos permite afirmar isso?}
     \label{fig:fragment2DatagramaIpEx3}
 \end{figure}
 Para se verificar se um fragmento é o primeiro basta ter em atenção o valor
-que está no \textit{Fragment offset}. Se for 0 então temos a certeza de que se
-trata do primeiro, caso contrário, é um dos seguintes.\\
+que está no \textit{Fragment offset}. Se esse valor for 0 então podemos concluir
+que se trata do primeiro.\\
 Sim, mais fragmentos existem porque o bit correspondente ao \textbf{More
-fragments} é
-1.
+fragments} é 1.
 
 \subsection{Alínea d}
 \textbf{Quantos fragmentos foram criados a partir do datagrama original?
