@@ -20,10 +20,11 @@ linkcolor=black}
 \usepackage{verbatim}
 \usepackage{amsmath}
 \usetikzlibrary{positioning,automata,decorations.markings}
+\AfterEndEnvironment{figure}{\noindent\ignorespaces}
 
 \begin{document}
 
-\title{TP2:  Protocolo IP (Parte 1 e 2)\\ 
+\title{TP2:  Protocolo IP (Parte I e II)\\ 
 \large Grupo Nº 7}
 \author{João Teixeira (A85504) \and José Ferreira (A83683) \and Miguel Solino (A86435)}
 
@@ -56,7 +57,9 @@ linkcolor=black}
     \label{fig:coreEx1}
 \end{figure}
 
-\subsection{a) Active o wireshark ou o tcpdump no pc s1. Numa shell de s1, execute o comando
+\subsection{Alínea a}
+\textbf{Active o wireshark ou o tcpdump no pc s1. Numa shell de s1, execute o
+comando
 traceroute -l para o endereço IP do host h5.}
 
 \begin{figure}[H]
@@ -65,15 +68,19 @@ traceroute -l para o endereço IP do host h5.}
     \caption{Ex. 1 - Traceroute}
     \label{fig:traceroutEx1}
 \end{figure}
-
-\subsection{b) Registe e analise o tráfego ICMP enviado enviado por s1 e tráfego ICMP
-recebido como resposta. Comente os resultados face ao comportamento esperado.}
-
-Analisando os resultados obtidos reparamos que o envio de pacotes teve duas fases.
-As fases estão divididas entre os pacotes com TTL abaixo de 4 e os com TTL acima de 4.
-Na primeira fase, os pacotes com TTL = 1, TTL = 2 e TTL = 3 foram descartados pelos
-routers r1, r2 e r3, respetivamente. Para cada um destes foi recebido um pacote 
-"Time-to-live exceeded". Já na segunda fase, ao contrário dos pacotes anteriores, nenhum deles foi descartado tendo como resposta pacotes "Echo (ping) reply".
+\subsection{Alínea b}
+\textbf{Registe e analise o tráfego ICMP enviado enviado por s1 e tráfego ICMP
+recebido como resposta. Comente os resultados face ao comportamento esperado.}\\
+Analisando os resultados obtidos, constatamos que o envio de pacotes teve duas
+fases.\\
+As fases estão divididas entre os pacotes com TTL abaixo de 4 e os com TTL acima
+de 4.\\
+Na primeira fase, os pacotes com TTL = 1, TTL = 2 e TTL = 3 foram descartados
+pelos routers r1, r2 e r3, respetivamente. Para cada um destes foi recebido um
+pacote \textit{Time-to-live exceeded}.\\
+Na segunda fase, ao contrário dos pacotes anteriores,
+nenhum deles foi descartado tendo como resposta pacotes \textit{Echo (ping)
+reply}.
 
 \begin{figure}[H]
     \centering 
@@ -81,19 +88,19 @@ routers r1, r2 e r3, respetivamente. Para cada um destes foi recebido um pacote
     \caption{Ex. 1 - Wireshark}
     \label{fig:wiresharkEx1}
 \end{figure}
+\subsection{Alínea c}
+\textbf{Qual deve ser o valor inicial mínimo do campo TTL para alcançar o
+destino h5? Verifique na prática que a sua resposta está correta.}\\
+Face aos resultados analisados na questão anterior verifica-se que a partir de
+TTL = 4 os pacotes deixam de receber mensagem de erro como resposta, logo o
+valor inicial mínimo para alcançar o destino h5 deverá ser 4.
 
-\subsection{c) Qual deve ser o valor inicial mínimo do campo TTL para alcançar o destino h5?
-Verifique na prática que a sua respsota está correta.}
-
-Face aos resultados analisados na questão anterior verifica-se que a partir de TTL = 4
-os pacotes deixam de receber mensagem de erro como resposta, logo o valor inicial
-minimo para alcançar o destino h5 deverá ser 4.
-
-\subsection{d) Qual o valor médio do tempo de ida-e-volta (Round-Trip Time) obtido?}
-
-RTT = ((0.075 + 0.013 + 0.010) / 3 + (0.022 + 0.012 + 0.012) / 3 + (0.025 + 0.014 + 0.013) / 3 + (0.041 + 0.016 + 0.015) / 3) * 2 = 0.178
-
-\pagebreak
+\subsection{Alínea d}
+\textbf{Qual o valor médio do tempo de ida-e-volta (Round-Trip Time) obtido?}\\
+\begin{math}
+RTT = ((0.075 + 0.013 + 0.010) / 3 + (0.022 + 0.012 + 0.012) / 3 + (0.025 +
+0.014 + 0.013) / 3 + (0.041 + 0.016 + 0.015) / 3) * 2 = 0.178
+\end{math}
 
 \section{Exercício 2}
 
@@ -104,6 +111,8 @@ RTT = ((0.075 + 0.013 + 0.010) / 3 + (0.022 + 0.012 + 0.012) / 3 + (0.025 + 0.01
     \label{fig:wiresharkEx2}
 \end{figure}
 
+\subsection{Alínea a}
+\textbf{Qual é o endereço IP da interface ativa do seu computador?}
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\textwidth]{images/ipEx2.png}
@@ -111,28 +120,25 @@ RTT = ((0.075 + 0.013 + 0.010) / 3 + (0.022 + 0.012 + 0.012) / 3 + (0.025 + 0.01
     \label{fig:ipEx2}
 \end{figure}
 
-\subsection{a) Qual é o endereço IP da interface ativa do seu computador?}
-
 192.168.100.208
 
-\subsection{b) Qual é o valor do campo protocolo? O que identifica?}
-ICMP (1).
-
+\subsection{Alínea b}
+\textbf{Qual é o valor do campo protocolo? O que identifica?}\\
+ICMP (1).\\
 O valor do campo protocolo é 1, ou seja, identifica o protocolo ICMP.
 
-\subsection{c) Quantos bytes tem o cabeçalho IP(v4)? Quantos bytes tem o
+\subsection{Alínea c}
+\textbf{Quantos bytes tem o cabeçalho IP(v4)? Quantos bytes tem o
 campo de dados (payload) do datagrama? Como se calcula o tamanho 
-do payload?}
-
+do payload?}\\
 O cabeçalho IP tem 20 bytes, analisando o campo Header length na 
-figura \ref{fig:Ex2}.
-
+figura \ref{fig:ipEx2}.\\
 O tamanho do campo de dados (payload) é a diferença entre o número 
-total de bytes e o tamanho do cabeçalho do datagrama:
-
+total de bytes e o tamanho do cabeçalho do datagrama:\\
 Payload = 60 - 20 = 40 bytes.
 
-\subsection{d) O datagrama IP foi fragmentado? }
+\subsection{Alínea d}
+\textbf{O datagrama IP foi fragmentado? }
 
 \begin{figure}[H]
     \centering 
@@ -140,23 +146,20 @@ Payload = 60 - 20 = 40 bytes.
     \caption{Ex. 2 - Flags do Cabeçalho IP}
     \label{fig:ipEx2Flags}
 \end{figure}
-
-
 Observando a figura \ref{fig:ipEx2Flags} reparamos que no 
-campo Flags, tudo está a 0, logo o "Fragment offset" tem valor 0, o que significa
-que se existirem mais fragmentos, este será o primeiro. 
-Tendo em atenção agora a flag "More Fragments" concluímos que não existem
+campo Flags, tudo está a 0, logo o \textit{Fragment offset} tem valor 0, o que
+Tendo em atenção agora a flag \textit{More Fragments} concluímos que não existem
 mais fragmentos pois, se o valor for 1 existem, caso contrário é 0. Logo,
 se estamos no primeiro fragmento e não existem mais então este é o datagrama
 original.
 
-\subsection{e) Ordene os pacotes capturados de acordo com o endereço IP 
+\subsection{Alínea e}
+\textbf{Ordene os pacotes capturados de acordo com o endereço IP 
 fonte (e.g., selecionando o cabeçalho
 da coluna Source), e analise a sequência de tráfego ICMP gerado a partir 
 do endereço IP atribuído à interface da sua máquina. Para a sequência 
 de mensagens ICMP enviadas pelo seu computador, indique que campos do 
-cabeçalho IP variam de pacote para pacote.}
-
+cabeçalho IP variam de pacote para pacote.}\\
 Após ordenarmos, concluímos que os campos do cabeçalho IP que variam de 
 pacote para pacote são o TTL, Header Checksum e o identificador.
 
@@ -166,26 +169,24 @@ pacote para pacote são o TTL, Header Checksum e o identificador.
     \caption{Ex. 2 - Tráfego Wireshark ordenado por endereço fonte}
     \label{fig:wiresharkSourceEx2}
 \end{figure}
+\subsection{Alínea f}
+\textbf{Observa algum padrão nos valores do campo de Identificação do datagrama
+IP e TTL?}\\
+Ao analisar o datagrama IP, verificamos que este conserva os primeiros 8 bits
+em todos o casos apresentados e os restantes são incrementados
+sequencialmente.\\
+Também observamos que o TTL é incrementado sequencialmente
 
-\subsection{f) Observa algum padrão nos valores do campo de Identificação do datagrama IP e TTL?}
-
-Verificamos que:
-
-Identificação do datagrama IP: mantém os primeiros 8 bits (colocar aqui os bits)
-e é incrementado sequencialmente.
-
-TTL: É incrementado sequencialmente
-
-\subsection{g) Ordene o tráfego capturado por endereço destino e encontre a 
+\subsection{Alínea g}
+\textbf{Ordene o tráfego capturado por endereço destino e encontre a 
 série de repostas ICMP TTL exceeded enviadas ao seu computador. Qual é o
 valor do campo TTL? Esse valor permanece constante para todas as mensagens 
-de resposta ICMP TTL exceed enviados ao seu host? Porquê?}
-
-O valor do campo TTL é 62.
+de resposta ICMP TTL exceed enviados ao seu host? Porquê?}\\
+O valor do campo TTL é 62.\\
 Para todas as mensagens de resposta ICMP TTL exceeded recebidas no nosso host
 esse valor manteve-se constante. O TTL mostrado (predefinido pelo destino) é 64.
-No entanto, no final, quando o pacote chega ao destino é 61, devido a ter passado
-por 2 routers antes de chegar, sendo então decrementado 2 vezes.
+No entanto, no final, quando o pacote chega ao destino é 61, devido a ter
+passado por 2 routers antes de chegar, sendo então decrementado 2 vezes.
 
 \begin{figure}[H]
     \centering 
@@ -194,7 +195,6 @@ por 2 routers antes de chegar, sendo então decrementado 2 vezes.
     \label{fig:wiresharkDestinyEx2}
 \end{figure}
 
-\pagebreak
 \section{Exercício 3}
 
 \begin{figure}[H]
@@ -203,16 +203,15 @@ por 2 routers antes de chegar, sendo então decrementado 2 vezes.
     \caption{Ex.3 - Fragmentos do datagrama IP}
     \label{fig:datagramaIpEx3}
 \end{figure}
+\subsection{Alínea a}
+\textbf{Localize a primeira mensagem ICMP. Porque é que houve 
+necessidade de fragmentar o pacote inicial?}\\
+Analisando a figura, vemos que a primeira mensagem ICMP é a 214.\\
+Porque o tamanho permitido pelo protocolo é inferior ao tamanho do PDU, sendo
+assim necessário ser fragmentado para ser possível circular na rede.
 
-\subsection{a) Localize a primeira mensagem ICMP. Porque é que houve 
-necessidade de fragmentar o pacote inicial?}
-
-Analisando a figura, vemos que a primeira mensagem ICMP é a 214.
-
-Porque o tamanho permitido pelo protocolo é inferior ao tamanho do PDU, sendo assim
-necessário ser fragmentado para ser possível circular na rede.
-
-\subsection{b) Imprima o primeiro fragmento do datagrama IP segmentado. 
+\subsection{Alínea b}
+\textbf{Imprima o primeiro fragmento do datagrama IP segmentado. 
 Que informação no cabeçalho IP indica que se trata do primeiro fragmento? 
 Qual é o tamanho deste datagrama IP?}
 
@@ -222,16 +221,15 @@ Qual é o tamanho deste datagrama IP?}
     \caption{Ex.3 - Cabeçalho do primeiro fragmento do datagrama IP}
     \label{fig:fragmentDatagramaIpEx3}
 \end{figure}
+Podemos observar na figura que, no campo Flags, o \textit{More fragments} tem
+valor 1, isso indica que o diagrama foi fragmentado, existindo então mais
+fragmentos.\\
+Seguidamente, podemos ver que o \textit{Fragment offset} é 0, provando de que se
+trata do primeiro fragmento.\\
+A \textit{Total Length} e igual a 1500 bytes
 
-Podemos reparar na figura que, no campo Flags, o "More fragments" tem valor 1, isso
-indica que o diagrama foi fragmentado, existindo então mais fragmentos.
-
-Seguidamente, podemos ver que o "Fragment offset" é 0, provando de que se trata
-do primeiro fragmento.
-
-Em relação ao tamanho basta ver o "Total Length" que é 1500 bytes.
-
-\subsection{c) Imprima o segundo fragmento do datagrama IP original. Que
+\subsection{Alínea c}
+\textbf{Imprima o segundo fragmento do datagrama IP original. Que
 informação do cabeçalho IP indica que não se trata do 1º fragmento? 
 Há mais fragmentos? O que nos permite afirmar isso?}
 
@@ -241,29 +239,29 @@ Há mais fragmentos? O que nos permite afirmar isso?}
     \caption{Ex.3 - Cabeçalho do segundo fragmento do datagrama IP}
     \label{fig:fragment2DatagramaIpEx3}
 \end{figure}
-
 Para se verificar se um fragmento é o primeiro basta ter em atenção o valor
-que está no "Fragment offset". Se for 0 então temos a certeza de que se trata
-do primeiro, caso contrário, é um dos seguintes.
+que está no \textit{Fragment offset}. Se for 0 então temos a certeza de que se
+trata do primeiro, caso contrário, é um dos seguintes.\\
+Sim, mais fragmentos existem porque o bit correspondente ao \textbf{More
+fragments} é
+1.
 
-Sim, mais fragmentos existem porque o bit correspondente ao "More fragments" é 1.
-
-\subsection{d) Quantos fragmentos foram criados a partir do datagrama original?
-Como se detecta o último fragmento correspondente ao datagrama original?}
-
+\subsection{Alínea d}
+\textbf{Quantos fragmentos foram criados a partir do datagrama original?
+Como se detecta o último fragmento correspondente ao datagrama original?}\\
 Como está mostrado na imagem, o terceiro fragmento do datagrama original
-tem o bit correspondente a "More fragments" a 0, ou seja, não há mais 
+tem o bit correspondente a \textit{More fragments} a 0, ou seja, não há mais 
 fragmentos a seguir a este. Concluindo assim que foram criados 3 fragmentos 
 (214, 215 e 216).
 
-\subsection{e) Indique, resumindo, os campos que mudam no cabeçalho IP entre 
+\subsection{Alínea e}
+\textbf{Indique, resumindo, os campos que mudam no cabeçalho IP entre 
 os diferentes fragmentos, e explique a forma como essa informação permite
-reconstruir o datagrama original.}
-
-Ao longo dos diferentes fragmentos, no cabeçalho IP, é alterado o "Fragment offset" e
-o "More Fragments". O primeiro permite identificar a posição do fragmento no 
-datagrama original, já o segundo, indica se, além deste, existem mais fragmentos do
-datagrama original.
+reconstruir o datagrama original.}\\
+Ao longo dos diferentes fragmentos, no cabeçalho IP, é alterado o
+\textit{Fragment offset} e o \textit{More Fragments}. O primeiro permite
+identificar a posição do fragmento no datagrama original, já o segundo, indica
+se, além deste, existem mais fragmentos do datagrama original.
 
 
 \chapter{Parte 2}
@@ -284,7 +282,6 @@ datagrama original.
     \label{fig:pingEx1P2}
 \end{figure}
 
-\pagebreak
 \section{Exercício 2}
 
 \begin{figure}[H]
@@ -315,7 +312,8 @@ datagrama original.
     \label{fig:htopca1}
 \end{figure}
 
-\pagebreak
 \section{Exercício 3}
+
+\chapter{Conclusão}
 
 \end{document}
