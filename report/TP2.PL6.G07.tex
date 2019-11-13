@@ -264,13 +264,6 @@ próprio.
 
 \chapter{Parte 2}
 
-\begin{figure}[H]
-    \centering 
-    \includegraphics[width=\textwidth]{images/topologiaCore.png}
-    \caption{Topologia Core}
-    \label{fig:topologiaCore}
-\end{figure}
-
 \section{Exercício 1}
 
 \subsection{Alínea a}
@@ -278,16 +271,31 @@ próprio.
 equipamento. Para simplificar, pode incluir uma imagem que ilustre de forma clara a
 topologia definida e o endereçamento usado.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/topologiaCore.png}
+    \caption{Topologia Core}
+    \label{fig:topologiaCore}
+\end{figure}
+Na figura \ref{fig:topologiaCore}, é possível verificar os endereços atribuídos a cada 
+equipamento. 
+
 \subsection{Alínea b}
-\textbf{Trata-se de endereços públicos ou privados? Porquê?}
+\textbf{Trata-se de endereços públicos ou privados? Porquê?}\\
+Uma vez que todos os endereços utilizam um dos blocos reservados a endereços privados:
+"10.0.0.0 - 10.255.255.255 / 8", concluimos que se tratam de endereços privados.
 
 \subsection{Alínea c}
-\textbf{Por que razão não é atribuído um endereço IP aos switches?}
+\textbf{Por que razão não é atribuído um endereço IP aos switches?}\\
+Não é necessário a atribuição de endereços IP aos switches porque são 
+intervenientes na camade de ligação 2 e por sua vez transparentes à camada de
+ligação 3. Estes encaminham os pacotes apenas tendo em atenção os endereços MAC dos
+equipamentos.\\
 
 \subsection{Alínea d}
 \textbf{Usando o comando ping certifique-se que existe conectividade IP entre 
 os laptops dos vários departamentos e o servidor do departamento A 
-(basta certificar-se da conectividade de um laptop por departamento).}
+(basta certificar-se da conectividade de um laptop por departamento).}\\
 
 \begin{figure}[H]
     \centering 
@@ -295,9 +303,13 @@ os laptops dos vários departamentos e o servidor do departamento A
     \caption{Ex.1 - Ping}
     \label{fig:pingEx1P2}
 \end{figure}
+Como podemos observar pela figura \ref{fig:pingEx1P2}, para verificar se existia
+conectividade foi utilizado o comando ping em pelo menos um laptop de cada departamento.
+Sendo que todos obtiveram resposta do servidor após terem enviado pacotes, concluímos
+que existe conectividade em todos os departamentos.
 
 \subsection{Alínea e}
-\textbf{Verifique se existe conectividade IP do router de acesso Rext para o servidor S1.}
+\textbf{Verifique se existe conectividade IP do router de acesso Rext para o servidor S1.}\\
 
 \begin{figure}[H]
     \centering 
@@ -305,6 +317,8 @@ os laptops dos vários departamentos e o servidor do departamento A
     \caption{Ex.2 - Conectividade S1 - Router Rext}
     \label{fig:RextPing}
 \end{figure}
+Observando a figura \ref{fig:RextPing} e seguindo o racíocinio da alinea anterior,
+verificamos que existe conectividade do router Rext para o servidor S1.
 
 \section{Exercício 2}
 
@@ -327,6 +341,19 @@ respetivo (man netstat).}
     \caption{Ex.2 - netstat Router departamento B}
     \label{fig:netstatRouterEx2P2}
 \end{figure}
+Na figura \ref{fig:netstatPcEx2P2} está representada a tabela de encaminhamento de onde
+podemos retirar informações relativa à rota que irá ser feita pelo pacote.
+Na coluna "Destination" é nos indicado a sub-rede destino, na "Gateway" a informação do
+equipamento pelo qual irá passar o pacote e na "Genmask" o tipo da máscara.\\
+Analisando a primeira e a segunda entrada da figura \ref{fig:netstatPcEx2P2} 
+reparamos que as duas diferem no Gateway. Sendo que os dois endereços estão ligados
+diretamente entre si, o Gateway não precisa de ser definido. Caso contrário, seria
+necessário para se saber o próximo salto.\\
+Relativamente à coluna Flags, estas apenas servem para acrescentar informações adicionais.
+A flag "UG" é utilizada quando o gateway está definido e a "U" caso contrário.
+Sendo que a primeira tabela e a segunda tabela são idênticas, não é necessário fazer
+uma análise de todas as entradas da segunda.
+
 
 \subsection{Alínea b}
 \textbf{Diga, justificando, se está a ser usado encaminhamento estático ou dinâmico
@@ -408,6 +435,14 @@ encaminhamento do servidor.}
 \section{Exercício 3}
 
 \subsection{Alínea 1}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/topCoreEx3.png}
+    \caption{Ex.2 - Topologia do novo endereçamento}
+    \label{fig:topCoreEx3}
+\end{figure}
+
 \textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em que “yy”
 são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o dígito 
 correspondente ao seu turno prático (PLx). Defina um novo esquema de endereçamento para 
