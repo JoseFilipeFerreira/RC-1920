@@ -1,4 +1,7 @@
-# TP2 - IP and Subnetting (RC Assignement)
+# TP2 - IP and Subnetting
+<h1 align="center">
+  <img alt="Topologia Core" src="report/images/topCoreEx3.png" width="750px">
+</h1>
 
 ## Authors
 * [João Teixeira](https://github.com/jtexeira)
