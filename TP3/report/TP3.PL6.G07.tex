@@ -46,16 +46,142 @@ linkcolor=black}
 
 \tableofcontents
 
-\pagebreak
-\chapter{Parte 1}
+\chapter{3. Captura e análise de tramas Ethernet }
 \section{Exercício 1}
-\subsection{Alínea a}
-\textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em
-que “yy” são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o
-dígito correspondente ao seu turno prático (PLx). Defina um novo esquema de
-endereçamento para as redes dos departamentos (mantendo a rede de acesso e core
-inalteradas) e atribua endereços às interfaces dos vários sistemas envolvidos.
-Deve justificar as opções usadas.}
+\textbf{Anote os endereços MAC de origem e de destino da trama capturada.}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/macAdress1.png}  
+    \caption{endereço MAC}
+    \label{fig:macAdress1}
+\end{figure}
+
+
+\section{Exercício 2}
+\textbf{Identifique a que sistemas se referem. Justifique.}
+
+
+\section{Exercício 3}
+\textbf{Qual o valor hexadecimal do campo Type da trama Ethernet? O que
+significa?}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramasHttp.png}  
+    \caption{Tramas HTTP}
+    \label{fig:tramasHttp}
+\end{figure}
+
+
+\section{Exercício 4}
+\textbf{Quantos bytes são usados desde o início da trama até ao caractere ASCII
+“G” do método HTTP GET? Calcule e indique, em percentagem, a sobrecarga
+(overhead) introduzida pela pilha protocolar no envio do HTTP GET.}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/bytes2G.png}
+    \caption{bytes até ao G}
+    \label{fig:bytes2G}
+\end{figure}
+
+
+\section{Exercício 5}
+\textbf{Através de visualização direta de uma trama capturada, verifique que,
+possivelmente, o campo FCS (Frame Check Sequence) usado para deteção de erros
+não está a ser usado. Em sua opinião, porque será?}
+
+
+\section{Exercício 6}
+\textbf{Qual é o endereço Ethernet da fonte? A que sistema de rede corresponde?
+Justifique.}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/678.png}
+    \caption{Trama Ethernet}
+    \label{fig:678}
+\end{figure}
+
+
+\section{Exercício 7}
+\textbf{Qual é o endereço MAC do destino? A que sistema corresponde?}
+
+
+\section{Exercício 8}
+\textbf{Atendendo ao conceito de desencapsulamento protocolar, identifique os
+vários}
+
+
+\chapter{4. Protocolo ARP}
+\section{Exercício 9}
+\textbf{Observe o conteúdo da tabela ARP. Explique o significado de cada uma
+das colunas.}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tabelaArp.png}
+    \caption{Tabela ARP}
+    \label{fig:tabelaArp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/arpCleanup.png}
+    \caption{ARP cleanup}
+    \label{fig:arpCleanup}
+\end{figure}
+
+
+\section{Exercício 10}
+\textbf{Qual é o valor hexadecimal dos endereços origem e destino na trama
+Ethernet que contém a mensagem com o pedido ARP (ARP Request)? Como interpreta e
+justifica o endereço destino usado?}
+
+
+\section{Exercício 11}
+\textbf{Qual o valor hexadecimal do campo tipo da trama Ethernet? O que indica?}
+
+
+\section{Exercício 12}
+\textbf{Qual o valor do campo ARP opcode? O que especifica?  Se necessário,
+consulte a RFC do protocolo ARP.}
+
+
+\section{Exercício 13}
+\textbf{Identifique que tipo de endereços está contido na mensagem ARP? Que
+conclui?}
+
+
+\section{Exercício 14}
+\textbf{Explicite que tipo de pedido ou pergunta é feito pelo host de origem?}
+
+
+\section{Exercício 15}
+\textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}
+
+
+\section{Exercício 16}
+\textbf{Identifique um pacote de pedido ARP gratuito originado pelo seu sistema.
+Analise o conteúdo de um pedido ARP gratuito e identifique em que se distingue
+dos restantes pedidos ARP. Registe a trama Ethernet correspondente. Qual o
+resultado esperado face ao pedido ARP enviado?}
+
+
+\chapter{5. Domínios de colisão}
+\section{Exercício 17}
+\textbf{17. Faça ping de n1 para n2. Verifique com a opção tcpdump como flui o
+tráfego nas diversas interfaces dos vários dispositivos. Que conclui?}
+
+
+\section{Exercício 18}
+\textbf{Na topologia de rede substitua o hub por um switch. Repita os
+procedimentos que realizou na pergunta anterior. Comente os resultados obtidos
+quanto à utilização de hubs e switches no contexto de controlar ou dividir
+domínios de colisão. Documente as suas observações e conclusões com base no
+tráfego observado/capturado.}
+
 
 \chapter{Conclusão}
 Neste trabalho prático foi nos dada a oportunidade de enriquecer o nosso conhecimento
