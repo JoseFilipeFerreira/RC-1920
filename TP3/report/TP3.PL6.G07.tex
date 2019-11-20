@@ -1,0 +1,77 @@
+\documentclass[a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{a4wide}
+\hypersetup{pdftitle={TP3:  Protocolo IP},
+pdfauthor={João Teixeira, José Ferreira, Miguel Solino},
+colorlinks=true,
+urlcolor=blue,
+linkcolor=black}
+\usepackage{subcaption}
+\usepackage[cache=false]{minted}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{appendix}
+\usepackage{tikz}
+\usepackage{authblk}
+\usepackage{bashful}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usetikzlibrary{positioning,automata,decorations.markings}
+\AfterEndEnvironment{figure}{\noindent\ignorespaces}
+
+\begin{document}
+
+\title{TP3:\\ 
+\large Grupo Nº 7}
+\author{João Teixeira (A85504) \and José Ferreira (A83683) \and Miguel Solino (A86435)}
+
+\date{\today}
+
+\begin{center}
+    \begin{minipage}{0.75\linewidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/eng.jpeg}\par\vspace{1cm}
+        \vspace{1cm}
+        \href{https://www.uminho.pt/PT}
+        {\color{black}{\scshape\LARGE Universidade do Minho}} \par
+        \vspace{1cm}
+        \href{https://www.di.uminho.pt/}
+        {\color{black}{\scshape\Large Departamento de Informática}} \par
+        \maketitle
+    \end{minipage}
+\end{center}
+
+\tableofcontents
+
+\pagebreak
+\chapter{Parte 1}
+\section{Exercício 1}
+\subsection{Alínea a}
+\textbf{Considere que dispõe apenas do endereço de rede IP 172.yyx.32.0/20, em
+que “yy” são os dígitos correspondendo ao seu número de grupo (Gyy) e “x” é o
+dígito correspondente ao seu turno prático (PLx). Defina um novo esquema de
+endereçamento para as redes dos departamentos (mantendo a rede de acesso e core
+inalteradas) e atribua endereços às interfaces dos vários sistemas envolvidos.
+Deve justificar as opções usadas.}
+
+\chapter{Conclusão}
+Neste trabalho prático foi nos dada a oportunidade de enriquecer o nosso conhecimento
+relativamente a redes. Para isso foram usadas duas ferramentas: Core, para simulação de 
+redes, e Wireshark, para captura de tráfego.\\
+O trabalho está dividido em duas partes e cada uma delas dividida em 3 questões.
+Cada parte teve como foco um tema e o mesmo acontece para cada questão facilitando a
+nossa perceção em detalhes que mesmo não parecendo são relevantes.\\
+Na primeira parte, o objetivo principal foi analisar o IP (Internet Protocol) e para isso
+analisamos o formato dos pacotes/datagramas IP e fragmentação dos mesmos.\\
+A segunda parte tinha como foco o estudo e perceção do endereçamento e encaminhamento do
+que foi estudado na parte anterior. Construimos topologias na tentativa de simular 
+o máximo do que se passa na realidade e nas mesmas remover, alterar e adicionar 
+endereços para compreender como são feitos os transportes de pacotes numa rede.\\
+Resumindo, consideramos que conseguimos atingir com sucesso todos os
+desafios apresentados no enunciado obtendo assim um conhecimento mais avançado
+sobre o protocolo IPv4 e \textit{sub-netting}.
+
+\end{document}
