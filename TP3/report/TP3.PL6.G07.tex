@@ -139,6 +139,12 @@ das colunas.}
 Ethernet que contém a mensagem com o pedido ARP (ARP Request)? Como interpreta e
 justifica o endereço destino usado?}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/ex10.png}
+    \caption{pedido ARP}
+    \label{fig:ex10}
+\end{figure}
 
 \section{Exercício 11}
 \textbf{Qual o valor hexadecimal do campo tipo da trama Ethernet? O que indica?}
@@ -148,6 +154,12 @@ justifica o endereço destino usado?}
 \textbf{Qual o valor do campo ARP opcode? O que especifica?  Se necessário,
 consulte a RFC do protocolo ARP.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/ex12.png}
+    \caption{campo ARP opcode}
+    \label{fig:ex12}
+\end{figure}
 
 \section{Exercício 13}
 \textbf{Identifique que tipo de endereços está contido na mensagem ARP? Que
@@ -161,12 +173,32 @@ conclui?}
 \section{Exercício 15}
 \textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/ex15a.png}
+    \caption{campo ARP opcode}
+    \label{fig:ex15a}
+\end{figure}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/ex15b.png}
+    \caption{pedido ARP}
+    \label{fig:ex15b}
+\end{figure}
 
 \section{Exercício 16}
 \textbf{Identifique um pacote de pedido ARP gratuito originado pelo seu sistema.
 Analise o conteúdo de um pedido ARP gratuito e identifique em que se distingue
 dos restantes pedidos ARP. Registe a trama Ethernet correspondente. Qual o
 resultado esperado face ao pedido ARP enviado?}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/ex16.png}
+    \caption{pacote de pedido ARP gratuito}
+    \label{fig:ex16}
+\end{figure}
 
 
 \chapter{5. Domínios de colisão}
@@ -184,18 +216,21 @@ tráfego observado/capturado.}
 
 
 \chapter{Conclusão}
-Neste trabalho prático foi nos dada a oportunidade de enriquecer o nosso conhecimento
-relativamente a redes. Para isso foram usadas duas ferramentas: Core, para simulação de 
-redes, e Wireshark, para captura de tráfego.\\
+Neste trabalho prático foi nos dada a oportunidade de enriquecer o nosso
+conhecimento relativamente a redes. Para isso foram usadas duas ferramentas:
+Core, para simulação de redes, e Wireshark, para captura de tráfego.\\
 O trabalho está dividido em duas partes e cada uma delas dividida em 3 questões.
-Cada parte teve como foco um tema e o mesmo acontece para cada questão facilitando a
-nossa perceção em detalhes que mesmo não parecendo são relevantes.\\
-Na primeira parte, o objetivo principal foi analisar o IP (Internet Protocol) e para isso
-analisamos o formato dos pacotes/datagramas IP e fragmentação dos mesmos.\\
-A segunda parte tinha como foco o estudo e perceção do endereçamento e encaminhamento do
-que foi estudado na parte anterior. Construimos topologias na tentativa de simular 
-o máximo do que se passa na realidade e nas mesmas remover, alterar e adicionar 
-endereços para compreender como são feitos os transportes de pacotes numa rede.\\
+Cada parte teve como foco um tema e o mesmo acontece para cada questão
+facilitando a nossa perceção em detalhes que mesmo não parecendo são
+relevantes.\\
+Na primeira parte, o objetivo principal foi analisar o IP (Internet Protocol) e
+para isso analisamos o formato dos pacotes/datagramas IP e fragmentação dos
+mesmos.\\
+A segunda parte tinha como foco o estudo e perceção do endereçamento e
+encaminhamento do que foi estudado na parte anterior. Construimos topologias na
+tentativa de simular o máximo do que se passa na realidade e nas mesmas remover,
+alterar e adicionar endereços para compreender como são feitos os transportes de
+pacotes numa rede.\\
 Resumindo, consideramos que conseguimos atingir com sucesso todos os
 desafios apresentados no enunciado obtendo assim um conhecimento mais avançado
 sobre o protocolo IPv4 e \textit{sub-netting}.
