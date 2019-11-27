@@ -60,7 +60,7 @@ Observando a figura \ref{fig:macAdress1}, vemos que o endereço MAC de origem é
 3c:97:0e:68:98:8e e o destino é 00:0c:29:d2:19:f0.
 
 \section{Exercício 2}
-\textbf{Identifique a que sistemas se referem. Justifique.}
+\textbf{Identifique a que sistemas se referem. Justifique.}\\
 Estes dois endereços estão em dois campos diferentes, \textit{Source} e
 \textit{Destination}.\\
 O primeiro corresponde à interface da nossa máquina nativa. O segundo
@@ -99,7 +99,7 @@ cálculo (65/383) * 100 = 16.97\%
 \section{Exercício 5}
 \textbf{Através de visualização direta de uma trama capturada, verifique que,
 possivelmente, o campo FCS (Frame Check Sequence) usado para deteção de erros
-não está a ser usado. Em sua opinião, porque será?}
+não está a ser usado. Em sua opinião, porque será?}\\
 Visualizando a trama reparamos que o campo FCS (\textit{Frame Check Sequence})
 não aparece. Isto deve-se a estarmos a utilizar uma conexão por rede wired
 (neste caso Ethernet) e este tipo é normalmente muito robusto e pouco suscetível
@@ -120,14 +120,14 @@ Como é mostrado na figura \ref{fig:678}, o endereço Ethernet da fonte
 à qual estamos ligados.
 
 \section{Exercício 7}
-\textbf{Qual é o endereço MAC do destino? A que sistema corresponde?}
+\textbf{Qual é o endereço MAC do destino? A que sistema corresponde?}\\
 Observando outra vez a figura \ref{fig:678} repara-se que o endereço Ethernet
 no campo Destination é 3c:97:0e:68:98:8e e este corresponde à interface ativa da
 nossa máquina nativa.
 
 \section{Exercício 8}
 \textbf{Atendendo ao conceito de desencapsulamento protocolar, identifique os
-vários}
+vários}\\
 Os protocolos contidos na trama mostrada na figura \ref{fig:678} são: Ethernet
 II, IPv4 (\textit{Internet Protocol Version 4}), TCP (\textit{Transmission
 Control Protocol}) e HTTP (\textit{Hypertext Transfer Protocol}).
@@ -172,7 +172,8 @@ destino para que todos os endereços conectados à rede recebam a mensagem com o
 pedido.
 
 \section{Exercício 11}
-\textbf{Qual o valor hexadecimal do campo tipo da trama Ethernet? O que indica?}
+\textbf{Qual o valor hexadecimal do campo tipo da trama Ethernet? O que
+indica?}\\
 Observando a figura \ref{fig:ex10}, vemos que o campo Type tem o valor 0x0806, 
 indicando que o campo de dados pertence ao ARP.
 
@@ -192,20 +193,20 @@ caso um pedido.
 
 \section{Exercício 13}
 \textbf{Identifique que tipo de endereços está contido na mensagem ARP? Que
-conclui?}
+conclui?}\\
 A mensagem ARP contém os endereços IP de destino e de origem e sendo que se
 trata de um ARP request então também só mostra o endereço MAC do endereço IP da
 origem.
 
 \section{Exercício 14}
-\textbf{Explicite que tipo de pedido ou pergunta é feito pelo host de origem?}
+\textbf{Explicite que tipo de pedido ou pergunta é feito pelo host de origem?}\\
 A pergunta que é feita pela nossa máquina é "Quem tem o endereço 192.168.100.206
 Diga 192.168.100.158". Logo, como resposta vamos obter o endereço MAC do
 equipamento que tiver o endereço indicado na pergunta.
 
 \section{Exercício 15}
 \textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}
-\textit{a. Qual o valor do campo ARP opcode? O que expecífica?}
+\textbf{a. Qual o valor do campo ARP opcode? O que expecífica?}
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\textwidth]{images/ex15a.png}
@@ -215,8 +216,7 @@ equipamento que tiver o endereço indicado na pergunta.
 Como podemos observar na figura \ref{fig:ex15a}, o valor do campo ARP opcode é
 0x0002, o que significa que se trata de uma resposta ao pedido ARP feito
 anteriormente.
-
-\textit{b. Em que posição da mensagem ARP está a resposta ao pedido ARP?}
+\textbf{b. Em que posição da mensagem ARP está a resposta ao pedido ARP?}
 
 \begin{figure}[H]
     \centering 
