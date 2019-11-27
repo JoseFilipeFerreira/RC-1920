@@ -61,7 +61,8 @@ Observando a figura \ref{fig:macAdress1}, vemos que o endereço MAC de origem é
 
 \section{Exercício 2}
 \textbf{Identifique a que sistemas se referem. Justifique.}
-Estes dois endereços estão em dois campos diferentes, Source e Destination.
+Estes dois endereços estão em dois campos diferentes, \textit{Source} e
+\textit{Destination}.\\
 O primeiro corresponde à interface da nossa máquina nativa. O segundo
 corresponde ao router da rede local à qual estamos ligados.
 
@@ -91,18 +92,18 @@ rede é IPv4.
     \label{fig:bytes2G}
 \end{figure}
 Observando a figura \ref{fig:bytes2G}, reparamos que até ao caractere ASCII "G"
-são usados 65 bytes.
+são usados 65 bytes.\\
 No total são utilizados 383 bytes, logo para verificar a sobrecarga fazemos o
-cálculo (65/383) * 100 = 16.97%
+cálculo (65/383) * 100 = 16.97\%
 
 \section{Exercício 5}
 \textbf{Através de visualização direta de uma trama capturada, verifique que,
 possivelmente, o campo FCS (Frame Check Sequence) usado para deteção de erros
 não está a ser usado. Em sua opinião, porque será?}
-Visualizando a trama reparamos que o campo FCS (Frame Check Sequence) não
-aparece. Isto deve-se a estarmos a utilizar uma conexão por rede wired (neste
-caso Ethernet) e este tipo é normalmente muito robusto e pouco suscetível a
-erros, ao contrário das redes Wireless em que este campo já é normal aparecer.
+Visualizando a trama reparamos que o campo FCS (\textit{Frame Check Sequence})
+não aparece. Isto deve-se a estarmos a utilizar uma conexão por rede wired
+(neste caso Ethernet) e este tipo é normalmente muito robusto e pouco suscetível
+a erros, ao contrário das redes Wireless em que este campo já é normal aparecer.
 
 \section{Exercício 6}
 \textbf{Qual é o endereço Ethernet da fonte? A que sistema de rede corresponde?
@@ -114,13 +115,13 @@ Justifique.}
     \caption{Trama Ethernet}
     \label{fig:678}
 \end{figure}
-Como é mostrado na figura \ref{fig:678}, o endereço Ethernet da fonte (Source) é
-00:0c:29:d2:19:f0 que corresponde ao router da rede local à qual estamos
-ligados.
+Como é mostrado na figura \ref{fig:678}, o endereço Ethernet da fonte
+(\textit{Source}) é 00:0c:29:d2:19:f0 que corresponde ao router da rede local
+à qual estamos ligados.
 
 \section{Exercício 7}
 \textbf{Qual é o endereço MAC do destino? A que sistema corresponde?}
-Observando outravez a figura \ref{fig:678} repara-se que o endereço Ethernet
+Observando outra vez a figura \ref{fig:678} repara-se que o endereço Ethernet
 no campo Destination é 3c:97:0e:68:98:8e e este corresponde à interface ativa da
 nossa máquina nativa.
 
@@ -128,8 +129,8 @@ nossa máquina nativa.
 \textbf{Atendendo ao conceito de desencapsulamento protocolar, identifique os
 vários}
 Os protocolos contidos na trama mostrada na figura \ref{fig:678} são: Ethernet
-II, IPv4 (Internet Protocol Version 4), TCP (Transmission Control Protocol) e
-HTTP (Hypertext Transfer Protocol).
+II, IPv4 (\textit{Internet Protocol Version 4}), TCP (\textit{Transmission
+Control Protocol}) e HTTP (\textit{Hypertext Transfer Protocol}).
 
 \chapter{4. Protocolo ARP}
 \section{Exercício 9}
@@ -142,7 +143,7 @@ das colunas.}
     \caption{Tabela ARP}
     \label{fig:tabelaArp}
 \end{figure}
-A tabela ARP pode ser assimilada a um histórico de comunicações, ou seja, mapeia
+A tabela ARP pode ser comparada a um histórico de comunicações, ou seja, mapeia
 o endereço IP para o endereço MAC dos sistemas que comunicaram recentemente.
 A primeira coluna representa os endereços IP, a segunda os endereços MAC e 
 a terceira o tipo do endereçamento usado.
@@ -239,11 +240,13 @@ resultado esperado face ao pedido ARP enviado?}
     \label{fig:ex16}
 \end{figure}
 Observando as figuras \ref{fig:ex16} e \ref{fig:ex10}, reparamos que existem
-algumas diferenças. A primeira diferença é que apresenta uma flag \textit{Is
-gratuitous}:True, indicando que se trata de um pedido ARP gratuito e a outra
-diferença é que o Sender e Target MAC address são iguais. Ao ser um ARP gratuito
-é esperado que não exista resposta, mas caso contrário acontecesse significaria
-que conectado à rede existe outro equipamento com o mesmo endereço que o nosso.
+algumas diferenças.\\
+A primeira diferença é que apresenta uma flag \textit{Is gratuitous}:True,
+indicando que se trata de um pedido ARP gratuito.\\
+A outra é que o Sender e Target MAC address são iguais.\\
+Ao ser um ARP gratuito é esperado que não exista resposta, mas caso contrário
+acontecesse significaria que conectado à rede existe outro equipamento com o
+mesmo endereço que o nosso.
 
 \chapter{5. Domínios de colisão}
 \section{Exercício 17}
@@ -309,12 +312,12 @@ tráfego observado/capturado.}
     \label{fig:ex18tcpdumpn3}
 \end{figure}
 Observando as figuras \ref{fig:ex18tcpdumpn2} e \ref{ex18tcpdumpn3}, reparamos
-que apenas o servidor de destino do ping recebeu os pacotes. Tal acontece
-porque o pedido foi enviado para um switch que envia diretamente para o host e
-não envia para todos como é feito por um hub. Ou seja, ao contrário do hub, com
-o switch não acontecem colisões frequentemente pois este envia para cada host as
-informações usando vários canais de comunicação. Concluindo assim que os
-switches são mais viáveis do que os hubs.
+que apenas o servidor de destino do ping recebeu os pacotes.\\
+Tal acontece porque o pedido foi enviado para um switch que envia diretamente
+para o host e não envia para todos como é feito por um hub. Ou seja, ao
+contrário do hub, com o switch não acontecem colisões frequentemente pois este
+envia para cada host as informações usando vários canais de comunicação.\\
+Concluindo assim que os switches são mais viáveis do que os hubs.
 
 \chapter{Conclusão}
 A realização deste trabalho proporcionou nos a oportunidade de aprofundar os
