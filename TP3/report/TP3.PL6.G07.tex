@@ -165,10 +165,10 @@ justifica o endereço destino usado?}
     \caption{pedido ARP}
     \label{fig:ex10}
 \end{figure}
-
-Na trama Ethernet (figura \ref{fig:ex10}) o endereço de origem é 3c:97:0e:68:98:8e
-e o de destino é ff:ff:ff:ff:ff:ff. É usado este endereço de destino para que todos
-os endereços conectados à rede recebam a mensagem com o pedido.
+Na trama Ethernet (figura \ref{fig:ex10}) o endereço de origem é
+3c:97:0e:68:98:8e e o de destino é ff:ff:ff:ff:ff:ff. É usado este endereço de
+destino para que todos os endereços conectados à rede recebam a mensagem com o
+pedido.
 
 \section{Exercício 11}
 \textbf{Qual o valor hexadecimal do campo tipo da trama Ethernet? O que indica?}
@@ -185,23 +185,22 @@ consulte a RFC do protocolo ARP.}
     \caption{campo ARP opcode}
     \label{fig:ex12}
 \end{figure}
-
-Como podemos observar na figura \ref{fig:ex12}, o campo ARP opcode tem o valor 0x0001.
-Isso significa que o pedido é um pedido ou uma resposta, sendo neste caso um pedido.
+Como podemos observar na figura \ref{fig:ex12}, o campo ARP opcode tem o valor
+0x0001. Isso significa que o pedido é um pedido ou uma resposta, sendo neste
+caso um pedido.
 
 \section{Exercício 13}
 \textbf{Identifique que tipo de endereços está contido na mensagem ARP? Que
 conclui?}
-
-A mensagem ARP contém os endereços IP de destino e de origem e sendo que se trata
-de um ARP request então também só mostra o endereço MAC do endereço IP da origem.
+A mensagem ARP contém os endereços IP de destino e de origem e sendo que se
+trata de um ARP request então também só mostra o endereço MAC do endereço IP da
+origem.
 
 \section{Exercício 14}
 \textbf{Explicite que tipo de pedido ou pergunta é feito pelo host de origem?}
-
 A pergunta que é feita pela nossa máquina é "Quem tem o endereço 192.168.100.206
-Diga 192.168.100.158". Logo, como resposta vamos obter o endereço MAC do equipamento
-que tiver o endereço indicado na pergunta.
+Diga 192.168.100.158". Logo, como resposta vamos obter o endereço MAC do
+equipamento que tiver o endereço indicado na pergunta.
 
 \section{Exercício 15}
 \textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}
@@ -212,12 +211,11 @@ que tiver o endereço indicado na pergunta.
     \caption{campo ARP opcode}
     \label{fig:ex15a}
 \end{figure}
-
-Como podemos observar na figura \ref{fig:ex15a}, o valor do campo ARP opcode é 0x0002,
-o que significa que se trata de uma resposta ao pedido ARP feito anteriormente.
+Como podemos observar na figura \ref{fig:ex15a}, o valor do campo ARP opcode é
+0x0002, o que significa que se trata de uma resposta ao pedido ARP feito
+anteriormente.
 
 \textit{b. Em que posição da mensagem ARP está a resposta ao pedido ARP?}
-
 
 \begin{figure}[H]
     \centering 
@@ -225,8 +223,8 @@ o que significa que se trata de uma resposta ao pedido ARP feito anteriormente.
     \caption{pedido ARP}
     \label{fig:ex15b}
 \end{figure}
-
-Observando a figura \ref{fig:ex15b}, a resposta ao pedido ARP está entre os bytes 6 e 11.
+Observando a figura \ref{fig:ex15b}, a resposta ao pedido ARP está entre os
+bytes 6 e 11.
 
 \section{Exercício 16}
 \textbf{Identifique um pacote de pedido ARP gratuito originado pelo seu sistema.
@@ -240,13 +238,12 @@ resultado esperado face ao pedido ARP enviado?}
     \caption{pacote de pedido ARP gratuito}
     \label{fig:ex16}
 \end{figure}
-
-Observando as figuras \ref{fig:ex16} e \ref{fig:ex10}, reparamos que existem algumas
-diferenças. A primeira diferença é que apresenta uma flag \textit{Is gratuitous}:True,
-indicando que se trata de um pedido ARP gratuito e a outra diferença é que o Sender e 
-Target MAC address são iguais. Ao ser um ARP gratuito é esperado que não exista resposta,
-mas caso contrário acontecesse significaria que conectado à rede existe outro equipamento
-com o mesmo endereço que o nosso.
+Observando as figuras \ref{fig:ex16} e \ref{fig:ex10}, reparamos que existem
+algumas diferenças. A primeira diferença é que apresenta uma flag \textit{Is
+gratuitous}:True, indicando que se trata de um pedido ARP gratuito e a outra
+diferença é que o Sender e Target MAC address são iguais. Ao ser um ARP gratuito
+é esperado que não exista resposta, mas caso contrário acontecesse significaria
+que conectado à rede existe outro equipamento com o mesmo endereço que o nosso.
 
 \chapter{5. Domínios de colisão}
 \section{Exercício 17}
@@ -279,11 +276,10 @@ tráfego nas diversas interfaces dos vários dispositivos. Que conclui?}
     \caption{tcpdump em n3}
     \label{fig:ex17tcpdumpn3}
 \end{figure}
-
 Analisando as figuras \ref{fig:ex17ping}, \ref{fig:ex17tcpdumpn2} e 
 \ref{fig:ex17tcpdumpn3} reparamos que os dois servidores receberam os pacotes.
-Isso deve-se ao facto de o hub ao receber o ping do laptop n1 para o servidor n2, 
-reencaminha-os para todos os dispositivos que estejam conectados à rede.
+Isso deve-se ao facto de o hub ao receber o ping do laptop n1 para o servidor
+n2, reencaminha-os para todos os dispositivos que estejam conectados à rede.
 
 \section{Exercício 18}
 \textbf{Na topologia de rede substitua o hub por um switch. Repita os
@@ -312,25 +308,25 @@ tráfego observado/capturado.}
     \caption{tcpdump em n3}
     \label{fig:ex18tcpdumpn3}
 \end{figure}
-
 Observando as figuras \ref{fig:ex18tcpdumpn2} e \ref{ex18tcpdumpn3}, reparamos
 que apenas o servidor de destino do ping recebeu os pacotes. Tal acontece
-porque o pedido foi enviado para um switch que envia diretamente para o host e não
-envia para todos como é feito por um hub. Ou seja, ao contrário do hub, com o switch
-não acontecem colisões frequentemente pois este envia para cada host as informações 
-usando vários canais de comunicação. Concluindo assim que os switches são mais viáveis 
-do que os hubs.
+porque o pedido foi enviado para um switch que envia diretamente para o host e
+não envia para todos como é feito por um hub. Ou seja, ao contrário do hub, com
+o switch não acontecem colisões frequentemente pois este envia para cada host as
+informações usando vários canais de comunicação. Concluindo assim que os
+switches são mais viáveis do que os hubs.
 
 \chapter{Conclusão}
-
-A realização deste trabalho proporcionou nos a oportunidade de aprofundar os nossos 
-conhecimentos relativamente a Ethernet, Endereços MAC, Address Resolution Protocol (ARP)
-e Interligação de Redes Locais. Utilizando a ferramenta Wireshark conseguimos capturar
-e analisar tramas Ethernet, ou seja, o essencial para colocarmos em prática e aprimorar
-os nossos conhecimentos relacionados com os tópicos anteriormente referidos.
-Se dividirmos o trabalho por partes é possível dividir em 3.
-Na primeira parte o foco foi baseado na utilização de uma conexão por Ethernet. Na segunda
-foi focado nos pacotes ARP e na terceira a comparação entre Hubs e Switches.
-Resumindo, achamos que maior parte do capitulo Link Layer foi abrangido e relembrado.
+A realização deste trabalho proporcionou nos a oportunidade de aprofundar os
+nossos conhecimentos relativamente a Ethernet, Endereços MAC, Address Resolution
+Protocol (ARP) e Interligação de Redes Locais.\\
+Utilizando a ferramenta Wireshark conseguimos capturar e analisar tramas
+Ethernet, ou seja, o essencial para colocarmos em prática e aprimorar os nossos
+conhecimentos relacionados com os tópicos anteriormente referidos.\\
+Se dividirmos o trabalho por partes é possível dividir em 3. Na primeira parte o
+foco foi baseado na utilização de uma conexão por Ethernet. Na segunda foi
+focado nos pacotes ARP e na terceira a comparação entre Hubs e Switches.
+Resumindo, achamos que maior parte do capitulo Link Layer foi abrangido e
+relembrado.
 
 \end{document}
