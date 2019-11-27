@@ -1,6 +1,6 @@
 # TP3 - Ethernet e Protocolo ARP
 <h1 align="center">
-  <img alt="Topologia Core" src="report/images/topCoreEx3.png" width="750px">
+  <img alt="Topologia Core" src="report/images/ex17topologiacore.png" width="750px">
 </h1>
 
 ## Authors
