@@ -188,7 +188,7 @@ consulte a RFC do protocolo ARP.}
     \label{fig:ex12}
 \end{figure}
 Como podemos observar na figura \ref{fig:ex12}, o campo ARP opcode tem o valor
-0x0001. Isso significa que o pedido é um pedido ou uma resposta, sendo neste
+0x0001. Isso significa que o pacote é um pedido ou uma resposta, sendo neste
 caso um pedido.
 
 \section{Exercício 13}
@@ -200,12 +200,12 @@ origem.
 
 \section{Exercício 14}
 \textbf{Explicite que tipo de pedido ou pergunta é feito pelo host de origem?}\\
-A pergunta que é feita pela nossa máquina é "Quem tem o endereço 192.168.100.206
-Diga 192.168.100.158". Logo, como resposta vamos obter o endereço MAC do
-equipamento que tiver o endereço indicado na pergunta.
+A pergunta que é feita pela nossa máquina é "Quem tem o endereço
+192.168.100.206? Diga 192.168.100.158". Logo, como resposta vamos obter o
+endereço MAC do equipamento que tiver o endereço indicado na pergunta.
 
 \section{Exercício 15}
-\textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}
+\textbf{Localize a mensagem ARP que é a resposta ao pedido ARP efectuado.}\\
 \textbf{a. Qual o valor do campo ARP opcode? O que expecífica?}
 \begin{figure}[H]
     \centering 
@@ -215,7 +215,7 @@ equipamento que tiver o endereço indicado na pergunta.
 \end{figure}
 Como podemos observar na figura \ref{fig:ex15a}, o valor do campo ARP opcode é
 0x0002, o que significa que se trata de uma resposta ao pedido ARP feito
-anteriormente.
+anteriormente.\\
 \textbf{b. Em que posição da mensagem ARP está a resposta ao pedido ARP?}
 
 \begin{figure}[H]
@@ -241,7 +241,7 @@ resultado esperado face ao pedido ARP enviado?}
 \end{figure}
 Observando as figuras \ref{fig:ex16} e \ref{fig:ex10}, reparamos que existem
 algumas diferenças.\\
-A primeira diferença é que apresenta uma flag \textit{Is gratuitous}:True,
+A primeira diferença é que apresenta uma flag \textit{Is gratuitous}: True,
 indicando que se trata de um pedido ARP gratuito.\\
 A outra é que o Sender e Target MAC address são iguais.\\
 Ao ser um ARP gratuito é esperado que não exista resposta, mas caso contrário
@@ -254,7 +254,7 @@ mesmo endereço que o nosso.
 tráfego nas diversas interfaces dos vários dispositivos. Que conclui?}
 \begin{figure}[H]
     \centering 
-    \includegraphics[width=\textwidth]{images/ex17topologiacore.png}
+    \includegraphics[width=0.8\textwidth]{images/ex17topologiacore.png}
     \caption{Topologia Core}
     \label{fig:ex17topologiacore}
 \end{figure}
@@ -293,7 +293,7 @@ tráfego observado/capturado.}
 
 \begin{figure}[H]
     \centering 
-    \includegraphics[width=\textwidth]{images/ex18topologiacore.png}
+    \includegraphics[width=0.8\textwidth]{images/ex18topologiacore.png}
     \caption{Topologia Core}
     \label{fig:ex18topologiacore}
 \end{figure}
@@ -311,8 +311,8 @@ tráfego observado/capturado.}
     \caption{tcpdump em n3}
     \label{fig:ex18tcpdumpn3}
 \end{figure}
-Observando as figuras \ref{fig:ex18tcpdumpn2} e \ref{ex18tcpdumpn3}, reparamos
-que apenas o servidor de destino do ping recebeu os pacotes.\\
+Observando as figuras \ref{fig:ex18tcpdumpn2} e \ref{fig:ex18tcpdumpn3},
+reparamos que apenas o servidor de destino do ping recebeu os pacotes.\\
 Tal acontece porque o pedido foi enviado para um switch que envia diretamente
 para o host e não envia para todos como é feito por um hub. Ou seja, ao
 contrário do hub, com o switch não acontecem colisões frequentemente pois este
@@ -323,9 +323,9 @@ Concluindo assim que os switches são mais viáveis do que os hubs.
 A realização deste trabalho proporcionou nos a oportunidade de aprofundar os
 nossos conhecimentos relativamente a Ethernet, Endereços MAC, Address Resolution
 Protocol (ARP) e Interligação de Redes Locais.\\
-Utilizando a ferramenta Wireshark conseguimos capturar e analisar tramas
-Ethernet, ou seja, o essencial para colocarmos em prática e aprimorar os nossos
-conhecimentos relacionados com os tópicos anteriormente referidos.\\
+Utilizando a ferramenta Wireshark e o Core conseguimos capturar e analisar
+tramas Ethernet, ou seja, o essencial para colocarmos em prática e aprimorar os
+nossos conhecimentos relacionados com os tópicos anteriormente referidos.\\
 Se dividirmos o trabalho por partes é possível dividir em 3. Na primeira parte o
 foco foi baseado na utilização de uma conexão por Ethernet. Na segunda foi
 focado nos pacotes ARP e na terceira a comparação entre Hubs e Switches.
