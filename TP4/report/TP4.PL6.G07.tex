@@ -4,10 +4,10 @@
 \usepackage{hyperref}
 \usepackage{a4wide}
 \hypersetup{pdftitle={TP3:  Protocolo IP},
-pdfauthor={João Teixeira, José Ferreira, Miguel Solino},
-colorlinks=true,
-urlcolor=blue,
-linkcolor=black}
+    pdfauthor={João Teixeira, José Ferreira, Miguel Solino},
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black}
 \usepackage{subcaption}
 \usepackage[cache=false]{minted}
 \usepackage{listings}
@@ -25,7 +25,7 @@ linkcolor=black}
 \begin{document}
 
 \title{TP4:\\ 
-\large Grupo Nº 7}
+    \large Grupo Nº 7}
 \author{João Teixeira (A85504) \and José Ferreira (A83683) \and Miguel Solino (A86435)}
 
 \date{\today}
@@ -46,76 +46,209 @@ linkcolor=black}
 
 \tableofcontents
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/trama1607.png}  
+    \caption{Trama 1607}
+    \label{fig:trama1607}
+\end{figure}
+
 \chapter{3. Acesso Rádio}
 \section{Exercício 1}
 \textbf{Identifique em que frequência do espectro está a operar a rede sem fios,
-e o canal que corresponde a essa frequência.}
+    e o canal que corresponde a essa frequência.}\\
+
+Observando a figura \ref{fig:trama1607}, a frequência do espextro que está a
+operar a rede sem fios é 2437MHz, correspondente ao canal 6.\\
 
 \section{Exercício 2}
-\textbf{Identifique a versão da norma IEEE 802.11 que está a ser usada.}
+\textbf{Identifique a versão da norma IEEE 802.11 que está a ser usada.}\\
+
+Reparando no campo PHY type na figura \ref{fig:trama1607}, a versão da norma
+IEEE é a 802.11b.\\
 
 \section{Exercício 3}
 \textbf{Qual o débito a que foi enviada a trama escolhida? Será que esse débito
     corresponde ao débito máximo a que a interface Wi-Fi pode operar?
-    Justifique.}
+    Justifique.}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/maxDataRateEx3.png}  
+    \caption{Extended Suported Rates da trama 1607}
+    \label{fig:maxDataRateEx3}
+\end{figure}\\
+
+Como é visto nas figuras \ref{fig:trama1607} e \ref{fig:maxDataRateEx3}, verificamos
+que o débito usado para o envio é de 1.0MB/s e o débito máximo teórico é 54MB/s.
+Logo o débito a que foi enviado não corresponde ao máximo da interface Wi-Fi.
 
 \chapter{4. Scanning}
 \section{Exercício 4}
 \textbf{Quais são os SSIDs dos dois APs que estão a emitir a maioria das tramas
-    de beacon?}
+    de beacon?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/SSIDsEx4.png}  
+    \caption{SSIDs mais frequentes}
+    \label{fig:SSIDsEx4}
+\end{figure}\\
+
+Como é mostrado na figura \ref{fig:SSIDsEx4}, os dois APs que estão a emitir a
+maioria das tramas são 30 Munroe St e linksys\_SES\_24086.
 
 \section{Exercício 5}
 \textbf{Qual o intervalo de tempo entre a transmissão de tramas beacon para o AP
     linksys\_ses\_24086? E do AP 30 Munroe St? (Pista: o intervalo está contido na
     própria trama). Na prática, a periodicidade de tramas beacon é verificada?
-    Tente explicar porquê.}
+    Tente explicar porquê.}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramaLinkEx5.png}  
+    \caption{Trama 1994}
+    \label{fig:tramaLinkEx5}
+\end{figure}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramaMunEx5.png}  
+    \caption{Trama 1995}
+    \label{fig:tramaMunEx5}
+\end{figure}\\
+
+Nas figuras \ref{fig:tramaLinkEx5} e \ref{tramaMunEx5} estão representadas duas
+tramas consecutivas correspondetes aos APs de SSIDs linkysys\_SES\_24086 e 30
+Munroe St, respetivamente. Reparando no campo Beacon Interval reparamos que o
+intervalo de tempo entre a transmissão de tramas é 0.102400 segundos nos dois APs.
+Na prática nem sempre a periodicidade é verificada graças a neste tipo de
+ligações existir uma maior probabilidade de haver interferências externas e
+atenuação do sinal.
 
 \section{Exercício 6}
 \textbf{Qual é (em notação hexadecimal) o endereço MAC de origem da trama beacon
     de 30 Munroe ST? Para detalhes sobre a estrutura das tramas 802.11, veja a
-    secção 7 da norma IEEE 802.11 citada no início.}
+    secção 7 da norma IEEE 802.11 citada no início.}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramaEx6.png}  
+    \caption{Trama 1995}
+    \label{fig:tramaEx6}
+\end{figure}\\
+
+Observando o campo Source Address da figura \ref{fig:tramaEx6} vemos que o
+endereço MAC de origem é 00:16:b6:f7:1d:51.
 
 \section{Exercício 7}
 \textbf{Qual é (em notação hexadecimal) o endereço MAC de destino na trama de 30
-    Munroe ST??}
+    Munroe ST??}\\
+
+Observando o campo Destination Address da figura anterior vemos que o endereço
+MAC de destino é ff:ff:ff:ff:ff:ff.
 
 \section{Exercício 8}
 \textbf{Qual é (em notação hexadecimal) o MAC BSS ID da trama beacon de 20
-    Munroe ST?}
+    Munroe ST?}\\
+
+Observando o campo BSS Id da figura anterior vemos que o o MAC BSS ID é
+00:16:b6:f7:1d:51.
 
 \section{Exercício 9}
 \textbf{As tramas beacon do AP 30 Munroe St anunciam que o AP suporta quatro
-    data rates e oito extended supported rates adicionais. Quais são?}
+    data rates e oito extended supported rates adicionais. Quais são?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/supportedRatesEx9.png}  
+    \caption{Data e Supported Rates}
+    \label{fig:supportedRatesEx9}
+\end{figure}\\
+
+Observando a figura \ref{fig:supportedRatesEx9}, reparamos que as tramas do AP
+30 Munroe St suportam débitos de base de 1 até 11 MBs e extended supported rates de
+6 a 54 MBs.
 
 \section{Exercício 10}
 \textbf{Selecione uma trama beacon (e.g., a trama 1YXX com Y=turno e XX=grupo,
     e.g., 1101). Esta trama pertence a que tipo de tramas 802.11? Indique o
     valor dos seus identificadores de tipo e de subtipo. Em que parte concreta
-    do cabeçalho da trama estão especificados (ver anexo)?}
+    do cabeçalho da trama estão especificados (ver anexo)?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tipoEx10.png}  
+    \caption{Tipo da trama 1607}
+    \label{fig:tipoEx10}
+\end{figure}\\
+
+Analisando a figura \ref{fig:tipoEx10}, reparamos que esta trama corresponde a
+uma trama de gestão (Management type). O identificador é do tipo 0 (0x00) e o
+subtipo 8 (0x1000).
+
+FALTA VER EM QUE BYTE SE ENCONTRA
+
 \section{Exercício 11}
 \textbf{Verifique se está a ser usado o método de deteção de erros CRC e se
     todas as tramas beacon são recebidas corretamente. Justifique o uso de
-    mecaismos de deteção de erros neste tipo de redes locais.}
+    mecaismos de deteção de erros neste tipo de redes locais.}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/erroEx11.png}  
+    \caption{Frame check sequence}
+    \label{fig:erroEx11}
+\end{figure}\\
+
+Primeiramente começamos por usar um filtro, wlan.fc.type_subtype==0x0008 &&
+wlan.fcs.status==bad, de modo a verificar se existiam tramas com esse estado
+"bad". No entanto, nenhuma trama foi encontrada. Seguidamente analisamos algumas
+tramas manualmente e reparamos (tal como mostrado na figura \ref{fig:erroEx11})
+que todas as tramas tinham "unverified" no campo Fram Check Sequence. Logo, o
+método de deteção de erros CRC não está a ser usado.
 
 \section{Exercício 12}
 \textbf{Identifique e registe todos os endereços MAC usados nas tramas beacon
     enviadas pelos APs. Recorde que o endereçamento está definido no cabeçalho
     das tramas 802.11 podendo ser utilizados até quatro endereços com diferente
     semântica. Para uma descrição detalhada da estrutura da trama 802.11,
-    consulte o anexo ao enunciado.}
+    consulte o anexo ao enunciado.}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/trama1994Ex12.png}  
+    \caption{Trama 1994}
+    \label{fig:trama1994Ex12}
+\end{figure}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/trama1995Ex12.png}  
+    \caption{Trama 1995}
+    \label{fig:trama1995Ex12}
+\end{figure}\\
+
+Nas tramas beacon enviadas pelos APs estão presentes quatro endereços: Receiver
+Address, Destination Address, Transmiter Address e Source Address. Analisando
+as figuras \ref{fig:trama1994Ex12} e \ref{fig:trama1995Ex12} vemos que todas as
+tramas o Receiver e o Destination address tem o valor ff:ff:ff:ff:ff:ff
+(Broadcast). Relativamente aos outros dois endereços, para o AP 
+
+COMPLETAR ISTO 
 
 \section{Exercício 13}
 \textbf{Estabeleça um filtro Wireshark apropriado que lhe permita visualizar
-    todas as tramas probing request e probing response, simultaneamente.}
+    todas as tramas probing request e probing response, simultaneamente.}\\
 
 \section{Exercício 14}
 \textbf{Quais são os endereços MAC BSS ID de destino e origem nestas tramas?
-    Qual o objetivo deste tipo de tramas?}
+    Qual o objetivo deste tipo de tramas?}\\
 
 \section{Exercício 15}
 \textbf{Identifique um probing request para o qual tenha havido um probing
     response. Face ao endereçamento usado, indique a que sistemas são
-    endereçadas estas tramas e explique qual o propósito das mesmas?}
+    endereçadas estas tramas e explique qual o propósito das mesmas?}\\
 
 \chapter{6. Processo de Associação}
 \section{Exercício 16}
@@ -123,74 +256,75 @@ e o canal que corresponde a essa frequência.}
     trace imediatamente após t=49 para terminar a ssociação com o AP 30 Munroe
     St que estava ativa quando o trace teve inicio= (Pista: uma é na camada IP e
     outra na camada de ligação 802.11). Observando a especificação 802.11, seria
-    de esperar outra trama, mas que não aparece?}
+    de esperar outra trama, mas que não aparece?}\\
 
 \section{Exercício 17}
 \textbf{Examine o trace e procure tramas de authentication enviadas do host para
     um AP e vice-versa. Quantas mensagens de authentication foram enviadas do
     host para o AP linkysys\_ses\_24086 (que tem o endereço MAC
-    Cisco\_Li\_f5:ba:bb) aproximadamente ao t=49?}
+    Cisco\_Li\_f5:ba:bb) aproximadamente ao t=49?}\\
 
 \section{Exercício 18}
 \textbf{Qual o tipo de autenticação pretendida pelo host, aberta ou usando uma
-    chave?}
+    chave?}\\
 
 \section{Exercício 19}
 \textbf{Observa-se a resposta de authentication do AP linksys\_ses\_24086 AP no
-    trace?}
+    trace?}\\
 
 \section{Exercício 20}
 \textbf{Vamos agora considerar o que acontece quando o host desiste de se
     associar ao AP linksys\_ses\_24086 AP e se tenta associar ao AP 30 Munroe
     St. Procure tramas authentication enviadas pelo host para e do AP e
     vice-versa. Em que tempo aparece um trama authentication do host para o AP
-    30 Munroe St. e quando aparece a resposta authentication do AP para o host?}
+    30 Munroe St. e quando aparece a resposta authentication do AP para o
+    host?}\\
 
 \section{Exercício 21}
 \textbf{Um associate request do host para o AP e uma trama de associate response
     correspondente do AP para o host são usados para que o host seja associado a
     um AP. Quando aparece o associate request do host para o AP 30 Munroe St?
-    Quando é enviado o correspondente associate reply?}
+    Quando é enviado o correspondente associate reply?}\\
 
 \section{Exercício 22}
-\textbf{Que taxas de trasmissão o host está disposto a usar? E o AP?}
+\textbf{Que taxas de trasmissão o host está disposto a usar? E o AP?}\\
 
 \section{Exercício 23}
 \textbf{Identifique uma sequência de tramas que corresponda a um processo de
-    associação completo entre a STA e o AP, incluindo a fase de autenticação.}
+    associação completo entre a STA e o AP, incluindo a fase de autenticação.}\\
 
 \chapter{7. Transferência de Dados}
 \section{Exercício 24}
 \textbf{Efetue um diagrama que ilustre a sequência de todas as tramas trocadas
-    no processo de associação, incluindo a fase de autenticação}
+    no processo de associação, incluindo a fase de autenticação}\\
 
 \section{Exercício 25}
 \textbf{Encontre a trama 802.11 que contém o segmento SYN TCP para a primeira
     sessão TCP (download alice.txt). Quais sao os três campos do endereços MAC
-    na trama 802.11?}
+    na trama 802.11?}\\
 
 \section{Exercício 26}
 \textbf{Qual o endereço MAC nesta trama que corresponde ao host (em notação
     hexadecimal)? Qual o do AP? Qual o do router do primeiro salto? Qual o
     endereço IP do host que está a enviar este segmento TCP? Qual o endereço IP
-    de destino?}
+    de destino?}\\
 
 \section{Exercício 27}
 \textbf{Este endereço IP de destino corresponde ao host, AP, router do primeiro
-    salto, ou outro equipamento de rede? Justifique.}
+    salto, ou outro equipamento de rede? Justifique.}\\
 
 \section{Exercício 28}
 \textbf{Encontre agora a trama 802.11 que contém o segmento SYNACK para esta
-    sessão TCP. Quais são os três campos dos endereços MAC na trama 802.11?}
+    sessão TCP. Quais são os três campos dos endereços MAC na trama 802.11?}\\
 
 \section{Exercício 29}
 \textbf{Qual o endereço MAC nesta trama que corresponde ao host? Qual o do AP?
-    Qual o do router do primeiro salto?}
+    Qual o do router do primeiro salto?}\\
 
 \section{Exercício 30}
 \textbf{O endereço MAC de origem na trama corresonde ao endereço IP do
     dispositivo que enviou o segmento TCP encapsulado neste datagrama?
-    Justifique.}
+    Justifique.}\\
 
 \chapter{Conclusão}
 A realização deste trabalho proporcionou nos a oportunidade de aprofundar os
