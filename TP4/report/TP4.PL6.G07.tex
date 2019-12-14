@@ -223,7 +223,7 @@ método de deteção de erros CRC não está a ser usado.
 \end{figure}\\
 
 \begin{figure}[H]
-    \centering 
+    \centering
     \includegraphics[width=\textwidth]{images/trama1995Ex12.png}  
     \caption{Trama 1995}
     \label{fig:trama1995Ex12}
@@ -241,20 +241,44 @@ COMPLETAR ISTO
 \textbf{Estabeleça um filtro Wireshark apropriado que lhe permita visualizar
     todas as tramas probing request e probing response, simultaneamente.}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/filtroEx3.png}  
+    \caption{Filtro Wireshark}
+    \label{fig:filtroEx3}
+\end{figure}\\
+
+Como é possível observar pela figura \ref{filtroEx3}, o filtro "wlan.fc.subtype 
+== 0x0004 || wlan.fc.subtype == 0x0005" mostra as tramas do tipo Probing Request
+e Response, pois estas tem o valor de subtipo 4 e 5, respetivamente.
+
 \section{Exercício 14}
 \textbf{Quais são os endereços MAC BSS ID de destino e origem nestas tramas?
     Qual o objetivo deste tipo de tramas?}\\
+
+Observando a figura \ref{fig:filtroEx3} podemos ver que a trama de subtipo Probing 
+Request tem como BSS ID de origem IntelCor_1f:57:13 e destino Broadcast. Isto 
+significa que foi feito um pedido para todos os equipamentos da rede de modo a encontrar
+um AP. A trama seguinte de subtipo Probing Response é a resposta à anterior, em que o BSS
+ID de origem é Cisco_Li_f7:1d:51 e de destino IntelCor_1f:57:13.
 
 \section{Exercício 15}
 \textbf{Identifique um probing request para o qual tenha havido um probing
     response. Face ao endereçamento usado, indique a que sistemas são
     endereçadas estas tramas e explique qual o propósito das mesmas?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/probEx15.png}  
+    \caption{Prob Request e Prob Response}
+    \label{fig:probEx15}
+\end{figure}\\
+
 \chapter{6. Processo de Associação}
 \section{Exercício 16}
 \textbf{Quais as duas ações realizadas (i.e., tramas enviadas) pelo host no
-    trace imediatamente após t=49 para terminar a ssociação com o AP 30 Munroe
-    St que estava ativa quando o trace teve inicio= (Pista: uma é na camada IP e
+    trace imediatamente após t=49 para terminar a associação com o AP 30 Munroe
+    St que estava ativa quando o trace teve inicio? (Pista: uma é na camada IP e
     outra na camada de ligação 802.11). Observando a especificação 802.11, seria
     de esperar outra trama, mas que não aparece?}\\
 
@@ -268,9 +292,29 @@ COMPLETAR ISTO
 \textbf{Qual o tipo de autenticação pretendida pelo host, aberta ou usando uma
     chave?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/authenticationEx18.png}  
+    \caption{Authentication Agorithm}
+    \label{fig:authenticationEx18}
+\end{figure}\\
+
+Observando o campo "Authentication Algorithm" da figura \ref{fig:authenticationEx18}
+podemos ver que se trata de uma autenticação aberta.
+
 \section{Exercício 19}
 \textbf{Observa-se a resposta de authentication do AP linksys\_ses\_24086 AP no
     trace?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramasEx19.png}  
+    \caption{Tramas após a autenticação}
+    \label{fig:tramasEx19}
+\end{figure}\\
+
+Analisando as tramas seguidas da 1749 na figura \ref{fig:tramasEx19} reparamos 
+que não existe qualquer trama que indique uma resposta do AP.
 
 \section{Exercício 20}
 \textbf{Vamos agora considerar o que acontece quando o host desiste de se
