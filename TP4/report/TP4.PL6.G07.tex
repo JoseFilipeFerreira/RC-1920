@@ -179,15 +179,13 @@ Observando a figura \ref{fig:supportedRatesEx9}, reparamos que as tramas do AP
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\textwidth]{images/tipoEx10.png}  
-    \caption{Tipo da trama 1607}
+    \caption{Tipo da trama 1995}
     \label{fig:tipoEx10}
 \end{figure}\\
 
 Analisando a figura \ref{fig:tipoEx10}, reparamos que esta trama corresponde a
 uma trama de gestão (Management type). O identificador é do tipo 0 (0x00) e o
-subtipo 8 (0x1000).
-
-FALTA VER EM QUE BYTE SE ENCONTRA
+subtipo 8 (0x1000). No cabeçalho esta informação encontra-se no byte 24.
 
 \section{Exercício 11}
 \textbf{Verifique se está a ser usado o método de deteção de erros CRC e se
@@ -274,6 +272,12 @@ ID de origem é Cisco_Li_f7:1d:51 e de destino IntelCor_1f:57:13.
     \label{fig:probEx15}
 \end{figure}\\
 
+Observando a figura \ref{fig:probEx15} verificamos que a trama 87 é um Probing Request e a 
+trama 88 é o Probing Response correspondente. Relativamente aos endereços, na primeira 
+trama esse corresponde ao STA (IntelCor_1f:57:13), que emite para todos os equipamentos da
+rede de forma a encontrar um AP e na segunda esse corresponde ao AP (Cisco_Li_f7:1d:51) que
+por sua vez enviou uma resposta.
+
 \chapter{6. Processo de Associação}
 \section{Exercício 16}
 \textbf{Quais as duas ações realizadas (i.e., tramas enviadas) pelo host no
@@ -282,11 +286,33 @@ ID de origem é Cisco_Li_f7:1d:51 e de destino IntelCor_1f:57:13.
     outra na camada de ligação 802.11). Observando a especificação 802.11, seria
     de esperar outra trama, mas que não aparece?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/acoesEx16.png}  
+    \caption{Ações realizadas pelo host}
+    \label{fig:acoesEx16}
+\end{figure}\\
+
+Como se pode ver na figura \ref{fig:acoesEx16}, as ações realizadas pelo host
+são as tramas 1733 e 1735, em que na primeira liberta a ligação e na segunda 
+termina a autenticação.
+
 \section{Exercício 17}
 \textbf{Examine o trace e procure tramas de authentication enviadas do host para
     um AP e vice-versa. Quantas mensagens de authentication foram enviadas do
     host para o AP linkysys\_ses\_24086 (que tem o endereço MAC
     Cisco\_Li\_f5:ba:bb) aproximadamente ao t=49?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/authenticationEx17.png}  
+    \caption{Tramas authentication enviadas}
+    \label{fig:authenticationEx17}
+\end{figure}\\
+
+Analisando a figura \ref{fig:authenticationEx17} reparamos que foram enviadas
+6 tramas de autenticação.
+
 
 \section{Exercício 18}
 \textbf{Qual o tipo de autenticação pretendida pelo host, aberta ou usando uma
@@ -324,28 +350,104 @@ que não existe qualquer trama que indique uma resposta do AP.
     30 Munroe St. e quando aparece a resposta authentication do AP para o
     host?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/respostaEx20.png}  
+    \caption{Tramas authentication}
+    \label{fig:respostaEx20}
+\end{figure}\\
+
+Podemos ver na figura \ref{fig:respostaEx20} que a trama de authentication do
+host para o AP (2156) aparece no tempo 63.168087 e a trama de autenticação do 
+AP para o host (2158) aparece no tempo 63.169071. 
+
 \section{Exercício 21}
 \textbf{Um associate request do host para o AP e uma trama de associate response
     correspondente do AP para o host são usados para que o host seja associado a
     um AP. Quando aparece o associate request do host para o AP 30 Munroe St?
     Quando é enviado o correspondente associate reply?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/associationEx21.png}  
+    \caption{Associate Request e Response}
+    \label{fig:associationEx21}
+\end{figure}\\
+
+Observando a figura \ref{fig:associationEx21}, o association request foi feito 
+no tempo 63.169910 (trama 2162) e a resposta foi feita no tempo 63.192101 
+(trama 2166).
+
 \section{Exercício 22}
 \textbf{Que taxas de trasmissão o host está disposto a usar? E o AP?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/hostEx22.png}  
+    \caption{Taxas de transmissão do Host}
+    \label{fig:hostEx22}
+\end{figure}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/apEx22.png}  
+    \caption{Taxas de transmissão do AP}
+    \label{fig:apEx22}
+\end{figure}\\
+
+Analisando as figuras \ref{fig:hostEx22} e \ref{fig:apEx22}, conseguimos ver que
+as taxas de transmissão que o host e o AP estão dispostos a usar chegam a 54 Mbit/sec.
 
 \section{Exercício 23}
 \textbf{Identifique uma sequência de tramas que corresponda a um processo de
     associação completo entre a STA e o AP, incluindo a fase de autenticação.}\\
 
-\chapter{7. Transferência de Dados}
+Para facilitar a procura de um processo de associação completo, começamos por aplicar
+um filtro (figura \ref{filterEx23}). Seguidamente, selecionamos as tramas 2162 e 2166.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/filterEx23.png}  
+    \caption{Taxas de transmissão do AP}
+    \label{fig:filterEx23}
+\end{figure}\\
+
+Logo após, removemos o filtro e identificamos todas as tramas correspondentes ao processo 
+de autenticação (tramas 2162 a 2167). A fase de autenticação começa na trama 2162 com um 
+Authentication Request, de seguida existem duas confirmações (tramas 2163 e 2165),
+terminando com a resposta da associação (trama 2166) e uma cofnirmação (trama 2167) que 
+permite concluir que a trama enviada não continha erros.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/nofilterEx23.png}  
+    \caption{Taxas de transmissão do AP}
+    \label{fig:nofilterEx23}
+\end{figure}\\
+
 \section{Exercício 24}
 \textbf{Efetue um diagrama que ilustre a sequência de todas as tramas trocadas
     no processo de associação, incluindo a fase de autenticação}\\
 
+FAZER O DIAGRAMA
+
+\chapter{7. Transferência de Dados}
+
 \section{Exercício 25}
 \textbf{Encontre a trama 802.11 que contém o segmento SYN TCP para a primeira
-    sessão TCP (download alice.txt). Quais sao os três campos do endereços MAC
+    sessão TCP (download alice.txt). Quais sao os três campos dos endereços MAC
     na trama 802.11?}\\
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramaEx25.png}  
+    \caption{Trama com o segmento SYN TCP}
+    \label{fig:tramaEx25}
+\end{figure}\\
+
+Analisando a figura \ref{fig:tramaEx25}, reparamos que o Destination address é
+Cisco_Li_f4:eb:a8 (00:16:b6:f4:eb:a8), Source Address é IntelCor_d1:b6:4f 
+(00:13:02:d1:b6:4f) e BSS Id é Cisco_Li_f7:1d:51 (00:16:b6:f7:1d:51).
 
 \section{Exercício 26}
 \textbf{Qual o endereço MAC nesta trama que corresponde ao host (em notação
@@ -353,22 +455,53 @@ que não existe qualquer trama que indique uma resposta do AP.
     endereço IP do host que está a enviar este segmento TCP? Qual o endereço IP
     de destino?}\\
 
+O endereço do Source Address corresponde ao host, o Receiver Address ao AP e o 
+Transmitter Address ao router do primeiro salto. O endereço de IP correspondente
+ao host que está a enviar este segmento é 192.168.1.209 e o IP de destino é
+128.119.245.12.
+
 \section{Exercício 27}
 \textbf{Este endereço IP de destino corresponde ao host, AP, router do primeiro
     salto, ou outro equipamento de rede? Justifique.}\\
+
+O endereço de IP do destino corresponde a outro equipamento de rede, pois
+este IP é público.
 
 \section{Exercício 28}
 \textbf{Encontre agora a trama 802.11 que contém o segmento SYNACK para esta
     sessão TCP. Quais são os três campos dos endereços MAC na trama 802.11?}\\
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{images/tramaEx28.png}  
+    \caption{Trama com o segmento SYNACK}
+    \label{fig:tramaEx28}
+\end{figure}\\
+
+Analisando a figura \ref{fig:tramaEx28}, reparamos que o Destination address é
+91:2a:b0:49:b6:4f, Source Address é Cisco_Li_f4:eb:a8 
+(00:16:b6:f4:eb:a8) e BSS Id é 
+
+COMPLETAR!!!!!
+
 \section{Exercício 29}
 \textbf{Qual o endereço MAC nesta trama que corresponde ao host? Qual o do AP?
     Qual o do router do primeiro salto?}\\
 
+O endereço do Destination Address corresponde ao host, Transmitter Address ao AP, 
+
+
 \section{Exercício 30}
-\textbf{O endereço MAC de origem na trama corresonde ao endereço IP do
+\textbf{O endereço MAC de origem na trama corresponde ao endereço IP do
     dispositivo que enviou o segmento TCP encapsulado neste datagrama?
     Justifique.}\\
+
+Analisando as figuras \ref{fig:tramaEx25} e \ref{tramaEx28} reparamos que o
+Destination Address da primeira e o Source Address da segunda tem o mesmo MAC 
+address o que significa que o mesmo se manteve para o mesmo IP, logo 
+este MAC Address corresponde ao IP do dispositivo.
+
+
 
 \chapter{Conclusão}
 A realização deste trabalho proporcionou nos a oportunidade de aprofundar os
