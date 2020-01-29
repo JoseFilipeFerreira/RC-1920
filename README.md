@@ -4,6 +4,7 @@
 * [Mobile Networks: From 4G to 5G](TP1)
 * [IP and Subnetting](TP2)
 * [Ethernet e Protocolo ARP](TP3)
+* [Redes Sem Fios (802.11)](TP4)
 
 ## Authors
 * [João Teixeira](https://github.com/jtexeira)
